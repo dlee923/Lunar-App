@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F620F2724200E255E8 /* AppDelegate.swift */; };
-		70B601F920F2724200E255E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F820F2724200E255E8 /* ViewController.swift */; };
+		70B601F920F2724200E255E8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F820F2724200E255E8 /* HomeVC.swift */; };
 		70B601FC20F2724200E255E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B601FA20F2724200E255E8 /* Main.storyboard */; };
 		70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70B601FD20F2724200E255E8 /* Lunar.xcdatamodeld */; };
 		70B6020120F2724300E255E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020020F2724300E255E8 /* Assets.xcassets */; };
 		70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020220F2724300E255E8 /* LaunchScreen.storyboard */; };
+		70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		70B601F320F2724200E255E8 /* Lunar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lunar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B601F620F2724200E255E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70B601F820F2724200E255E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70B601F820F2724200E255E8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		70B601FB20F2724200E255E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70B601FE20F2724200E255E8 /* Lunar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lunar.xcdatamodel; sourceTree = "<group>"; };
 		70B6020020F2724300E255E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70B6020320F2724300E255E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B6020520F2724300E255E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WS_CoinMarketCap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				70B601F620F2724200E255E8 /* AppDelegate.swift */,
-				70B601F820F2724200E255E8 /* ViewController.swift */,
+				70B601F820F2724200E255E8 /* HomeVC.swift */,
+				70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */,
 				70B601FA20F2724200E255E8 /* Main.storyboard */,
 				70B6020020F2724300E255E8 /* Assets.xcassets */,
 				70B6020220F2724300E255E8 /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B601F920F2724200E255E8 /* ViewController.swift in Sources */,
+				70B601F920F2724200E255E8 /* HomeVC.swift in Sources */,
 				70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */,
 				70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */,
+				70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7E8B8U32UT;
+				DEVELOPMENT_TEAM = 76EM9P9GMZ;
 				INFOPLIST_FILE = Lunar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7E8B8U32UT;
+				DEVELOPMENT_TEAM = 76EM9P9GMZ;
 				INFOPLIST_FILE = Lunar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

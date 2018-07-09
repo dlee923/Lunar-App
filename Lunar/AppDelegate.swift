@@ -17,6 +17,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        let navController = UINavigationController(rootViewController: HomeVC())
+        navController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navController.navigationBar.shadowImage = UIImage()
+        
+        let statusBarView: UIView = {
+            let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.backgroundColor = .green
+            return view
+        }()
+        
+        if let homeView = navController.view {
+            homeView.addSubview(statusBarView)
+            
+            statusBarView.topAnchor.constraint(equalTo: homeView.topAnchor).isActive = true
+            statusBarView.leftAnchor.constraint(equalTo: homeView.leftAnchor).isActive = true
+            statusBarView.rightAnchor.constraint(equalTo: homeView.rightAnchor).isActive = true
+            statusBarView.bottomAnchor.constraint(equalTo: navController.navigationBar.bottomAnchor).isActive = true
+        }
+        
+        window?.rootViewController = navController
+        
         return true
     }
 
