@@ -14,6 +14,7 @@
 		70B6020120F2724300E255E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020020F2724300E255E8 /* Assets.xcassets */; };
 		70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020220F2724300E255E8 /* LaunchScreen.storyboard */; };
 		70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */; };
+		70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		70B6020320F2724300E255E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B6020520F2724300E255E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WS_CoinMarketCap.swift; sourceTree = "<group>"; };
+		70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				70B601F620F2724200E255E8 /* AppDelegate.swift */,
 				70B601F820F2724200E255E8 /* HomeVC.swift */,
+				70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */,
 				70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */,
 				70B601FA20F2724200E255E8 /* Main.storyboard */,
 				70B6020020F2724300E255E8 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */,
 				70B601F920F2724200E255E8 /* HomeVC.swift in Sources */,
 				70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */,
 				70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */,
