@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		705C5E4C20F6F05400FEF60B /* HomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */; };
+		705C5E4E20F6F46400FEF60B /* DashboardGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C5E4D20F6F46400FEF60B /* DashboardGraphCell.swift */; };
 		70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F620F2724200E255E8 /* AppDelegate.swift */; };
 		70B601F920F2724200E255E8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F820F2724200E255E8 /* HomeVC.swift */; };
 		70B601FC20F2724200E255E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B601FA20F2724200E255E8 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboard.swift; sourceTree = "<group>"; };
+		705C5E4D20F6F46400FEF60B /* DashboardGraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardGraphCell.swift; sourceTree = "<group>"; };
 		70B601F320F2724200E255E8 /* Lunar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lunar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B601F620F2724200E255E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B601F820F2724200E255E8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -61,9 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				70B601F620F2724200E255E8 /* AppDelegate.swift */,
-				70B601F820F2724200E255E8 /* HomeVC.swift */,
-				70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */,
 				70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */,
+				70B601F820F2724200E255E8 /* HomeVC.swift */,
+				705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */,
+				705C5E4D20F6F46400FEF60B /* DashboardGraphCell.swift */,
+				70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */,
 				70B601FA20F2724200E255E8 /* Main.storyboard */,
 				70B6020020F2724300E255E8 /* Assets.xcassets */,
 				70B6020220F2724300E255E8 /* LaunchScreen.storyboard */,
@@ -147,7 +153,9 @@
 				70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */,
 				70B601F920F2724200E255E8 /* HomeVC.swift in Sources */,
 				70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */,
+				705C5E4C20F6F05400FEF60B /* HomeDashboard.swift in Sources */,
 				70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */,
+				705C5E4E20F6F46400FEF60B /* DashboardGraphCell.swift in Sources */,
 				70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
