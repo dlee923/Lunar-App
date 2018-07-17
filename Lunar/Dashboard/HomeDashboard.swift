@@ -12,8 +12,15 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
-        
+        self.backgroundColor = .gray
         self.dataSource = self
+    }
+    
+    var coins: [Crypto]? {
+        didSet{
+            print("dashboard coins set")
+            self.reloadData()
+        }
     }
     
     func registerCells() {
@@ -21,7 +28,7 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return coins?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

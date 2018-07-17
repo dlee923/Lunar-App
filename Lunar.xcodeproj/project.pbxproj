@@ -16,6 +16,8 @@
 		70B6020120F2724300E255E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020020F2724300E255E8 /* Assets.xcassets */; };
 		70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020220F2724300E255E8 /* LaunchScreen.storyboard */; };
 		70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */; };
+		70CB1D0F20FC19D80002657B /* Simple_Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70CB1D0E20FC19D80002657B /* Simple_Tech.otf */; };
+		70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB1D1020FC1AD70002657B /* General_Properties.swift */; };
 		70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		70B6020320F2724300E255E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B6020520F2724300E255E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WS_CoinMarketCap.swift; sourceTree = "<group>"; };
+		70CB1D0E20FC19D80002657B /* Simple_Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple_Tech.otf; sourceTree = "<group>"; };
+		70CB1D1020FC1AD70002657B /* General_Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General_Properties.swift; sourceTree = "<group>"; };
 		70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,10 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				70B601F620F2724200E255E8 /* AppDelegate.swift */,
+				70CB1D0E20FC19D80002657B /* Simple_Tech.otf */,
+				70CB1D1020FC1AD70002657B /* General_Properties.swift */,
 				70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */,
 				70B601F820F2724200E255E8 /* HomeVC.swift */,
-				705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */,
-				705C5E4D20F6F46400FEF60B /* DashboardGraphCell.swift */,
+				70CB1D0C20FC067D0002657B /* Dashboard */,
 				70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */,
 				70B601FA20F2724200E255E8 /* Main.storyboard */,
 				70B6020020F2724300E255E8 /* Assets.xcassets */,
@@ -77,6 +82,23 @@
 				70B601FD20F2724200E255E8 /* Lunar.xcdatamodeld */,
 			);
 			path = Lunar;
+			sourceTree = "<group>";
+		};
+		70CB1D0C20FC067D0002657B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */,
+				70CB1D0D20FC06910002657B /* Dashboard Cells */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		70CB1D0D20FC06910002657B /* Dashboard Cells */ = {
+			isa = PBXGroup;
+			children = (
+				705C5E4D20F6F46400FEF60B /* DashboardGraphCell.swift */,
+			);
+			path = "Dashboard Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +162,7 @@
 				70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */,
 				70B6020120F2724300E255E8 /* Assets.xcassets in Resources */,
 				70B601FC20F2724200E255E8 /* Main.storyboard in Resources */,
+				70CB1D0F20FC19D80002657B /* Simple_Tech.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +178,7 @@
 				70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */,
 				705C5E4C20F6F05400FEF60B /* HomeDashboard.swift in Sources */,
 				70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */,
+				70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */,
 				705C5E4E20F6F46400FEF60B /* DashboardGraphCell.swift in Sources */,
 				70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */,
 			);
