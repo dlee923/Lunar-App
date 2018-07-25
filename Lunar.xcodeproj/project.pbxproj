@@ -18,6 +18,7 @@
 		70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */; };
 		70CB1D0F20FC19D80002657B /* Simple_Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70CB1D0E20FC19D80002657B /* Simple_Tech.otf */; };
 		70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB1D1020FC1AD70002657B /* General_Properties.swift */; };
+		70CF13B22106C760007453DB /* futureforcescondital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70CF13B12106C760007453DB /* futureforcescondital.ttf */; };
 		70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WS_CoinMarketCap.swift; sourceTree = "<group>"; };
 		70CB1D0E20FC19D80002657B /* Simple_Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple_Tech.otf; sourceTree = "<group>"; };
 		70CB1D1020FC1AD70002657B /* General_Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General_Properties.swift; sourceTree = "<group>"; };
+		70CF13B12106C760007453DB /* futureforcescondital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futureforcescondital.ttf; sourceTree = "<group>"; };
 		70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 			children = (
 				70B601F620F2724200E255E8 /* AppDelegate.swift */,
 				70CB1D0E20FC19D80002657B /* Simple_Tech.otf */,
+				70CF13B12106C760007453DB /* futureforcescondital.ttf */,
 				70CB1D1020FC1AD70002657B /* General_Properties.swift */,
 				70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */,
 				70B601F820F2724200E255E8 /* HomeVC.swift */,
@@ -159,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CF13B22106C760007453DB /* futureforcescondital.ttf in Resources */,
 				70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */,
 				70B6020120F2724300E255E8 /* Assets.xcassets in Resources */,
 				70B601FC20F2724200E255E8 /* Main.storyboard in Resources */,

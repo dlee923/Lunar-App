@@ -15,13 +15,19 @@ class HomeVC: UIViewController {
         
         self.view.backgroundColor = .purple
         // Do any additional setup after loading the view, typically from a nib.
-        
-        set_up_home_dashboard()
 
         download_coinmarketcap_data(select_currency: "LTC")
+        
+        set_up_home_dashboard()
     }
     
-    var coins: [Crypto]?
+    var coins: [Crypto]? {
+        didSet {
+            home_dashboard.coins = self.coins
+        }
+    }
+    
+    weak var home_dashboard: HomeDashboard!
 
     func download_coinmarketcap_data(select_currency: String) {
         let CMC = WebService_CoinMarketCap(select_currency: select_currency)
@@ -37,8 +43,8 @@ class HomeVC: UIViewController {
     }
     
     func set_up_home_dashboard() {
-        let home_dashboard = HomeDashboard()
-        home_dashboard.coins = self.coins
+        home_dashboard = HomeDashboard()
+        home_dashboard.homeVC = self
         self.view.addSubview(home_dashboard)
         home_dashboard.translatesAutoresizingMaskIntoConstraints = false
         home_dashboard.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true

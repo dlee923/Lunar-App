@@ -9,3 +9,4 @@
 import UIKit
 
 let font_simple_tech = UIFont(name: "Simple Tech Bold 02", size: 5)
+let font_future_forces = UIFont(name: "Future Forces Condensed Italic", size: 5)

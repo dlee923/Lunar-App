@@ -41,6 +41,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>futureforcescondital.ttf</string>
 		<string>Simple_Tech.otf</string>
 	</array>
 </dict>
