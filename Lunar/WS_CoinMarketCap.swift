@@ -34,6 +34,7 @@ class WebService_CoinMarketCap: NSObject {
     
     
     init(select_currency: String) {
+        super.init()
         self.select_currency = select_currency
     }
     

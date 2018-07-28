@@ -27,6 +27,8 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     
     weak var homeVC: HomeVC?
     
+    let cell_spacing: CGFloat = 5
+    
     func registerCells() {
         self.register(DashboardGraphCell.self, forCellWithReuseIdentifier: "DashboardCell")
     }
@@ -40,12 +42,16 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (self.frame.width - 15) / 2
+        let width = ((self.frame.width) / 2) - 2.5
         return CGSize(width: width, height: width)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return cell_spacing
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -14,6 +14,7 @@ extension UILabel {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
         self.font = font_future_forces?.withSize(font_size)
         self.textColor = font_color
+        self.backgroundColor = .black
     }
     
     func style_stock_price_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
@@ -34,28 +35,31 @@ class DashboardGraphCell: UICollectionViewCell {
     let stock_symbol_lbl = UILabel()
     let stock_price_lbl = UILabel()
     var crypto: Crypto?
+    let inset_border: CGFloat = 5
     
     func set_up_stock_cell() {
         self.addSubview(stock_symbol_lbl)
-        stock_symbol_lbl.style_stock_symbol_label(font_size: 40, font_color: .white, autolayout: true)
+        stock_symbol_lbl.style_stock_symbol_label(font_size: 30, font_color: .white, autolayout: true)
         
         self.addSubview(stock_price_lbl)
         stock_price_lbl.style_stock_price_label(font_size: 15, font_color: .white, autolayout: true)
         
-        stock_symbol_lbl.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stock_symbol_lbl.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stock_symbol_lbl.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stock_symbol_lbl.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        stock_symbol_lbl.topAnchor.constraint(equalTo: self.topAnchor, constant: inset_border).isActive = true
+        stock_symbol_lbl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -inset_border).isActive = true
+        stock_symbol_lbl.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: inset_border).isActive = true
+        stock_symbol_lbl.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1).isActive = true
         
-        stock_price_lbl.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stock_price_lbl.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stock_price_lbl.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stock_price_lbl.topAnchor.constraint(equalTo: stock_symbol_lbl.bottomAnchor).isActive = true
+        stock_price_lbl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -inset_border).isActive = true
+        stock_price_lbl.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: inset_border).isActive = true
+        stock_price_lbl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -inset_border).isActive = true
+        stock_price_lbl.topAnchor.constraint(equalTo: stock_symbol_lbl.bottomAnchor, constant: inset_border).isActive = true
         
-        stock_symbol_lbl.text = crypto?.symbol
+        if let crypto_symbol = crypto?.symbol {
+            stock_symbol_lbl.text = " \(crypto_symbol)"
+        }
         
         if let crypto_price = crypto?.crpto_price {
-            stock_price_lbl.text = "\(crypto_price)"
+            stock_price_lbl.text = " \(crypto_price)"
         }
     }
     
