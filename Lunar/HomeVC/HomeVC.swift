@@ -15,11 +15,16 @@ class HomeVC: UIViewController {
         
         self.view.backgroundColor = .purple
         // Do any additional setup after loading the view, typically from a nib.
-
-//        download_coinmarketcap_data(select_currency: "LTC")
-        download_crypto_compare_data(select_currency: "BTC", convert_currency: "USD", interval_type: .minute, interval: 5, history_length: 10)
         
-        set_up_home_dashboard()
+        // download coin current prices
+//        download_coinmarketcap_data(select_currency: "LTC")
+        // download coin histories
+//        download_crypto_compare_data(select_currency: "BTC", convert_currency: "USD", interval_type: .minute, interval: 5, history_length: 10)
+        
+        // set up dashboard
+//        set_up_home_dashboard()
+        
+        add_graph_view()
     }
     
     var coins: [Crypto]? {
@@ -44,7 +49,9 @@ class HomeVC: UIViewController {
     func download_crypto_compare_data(select_currency: String, convert_currency: String, interval_type: Interval_Type, interval: Int, history_length: Int) {
         let CC = WebService_CryptoCompare(select_currency: select_currency, convert_currency: convert_currency, interval_type: interval_type, interval: interval, history_length: history_length)
         
-        CC.download_coin_history()
+        CC.download_coin_history { (candlestick_prices) in
+            print(candlestick_prices)
+        }
     }
     
     func set_up_home_dashboard() {
@@ -56,6 +63,14 @@ class HomeVC: UIViewController {
         home_dashboard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: home_dashboard_inset_border).isActive = true
         home_dashboard.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -home_dashboard_inset_border).isActive = true
         home_dashboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: (-home_dashboard_inset_border * 4)).isActive = true
+    }
+    
+    func add_graph_view() {
+        let graph = Graph(frame: CGRect(x: 0, y: 100, width: self.view.frame.width, height: 200), history: [10, 30, 10, 30, 10, 30])
+        graph.x_axis_width = Double(self.view.frame.width)
+        graph.y_axis_height = 200
+        graph.render_graph()
+        self.view.addSubview(graph)
     }
 
     override func didReceiveMemoryWarning() {

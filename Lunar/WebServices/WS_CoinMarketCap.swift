@@ -19,10 +19,20 @@ enum Convert_Currencies: String {
 
 struct Crypto {
     let symbol: String
-    var crpto_price: Double
-    var usd_price: Double
+    var conversion_data: PriceData
+    var usd_data: PriceData
     var price_history: [Double]?
     var rank: Int
+}
+
+
+struct PriceData {
+    var price: Double
+    var volume_24: Double
+    var market_cap: Double
+    var pct_1h: Double
+    var pct_24h: Double
+    var pct_1week: Double
 }
 
 
@@ -102,12 +112,39 @@ class WebService_CoinMarketCap: NSObject {
                         guard let coin_info = coin_object.value as? [String:AnyObject] else { return }
                         guard let coin_symbol = coin_info["symbol"] as? String else { return }
                         guard let coin_prices = coin_info["quotes"] as? [String: AnyObject] else { return }
+                        
                         guard let conversion_price_quote = coin_prices[conversion_currency] as? [String: AnyObject] else { return }
                         guard let conversion_price = conversion_price_quote["price"] as? Double else { return }
+                        guard let conversion_volume_24 = conversion_price_quote["volume_24"] as? Double else { return }
+                        guard let conversion_market_cap = conversion_price_quote["market_cap"] as? Double else { return }
+                        guard let conversion_pct_1h = conversion_price_quote["percent_change_1h"] as? Double else { return }
+                        guard let conversion_pct_24h = conversion_price_quote["percent_change_24h"] as? Double else { return }
+                        guard let conversion_pct_1week = conversion_price_quote["percent_change_7d"] as? Double else { return }
+                        
+                        let conversion_data = PriceData(price: conversion_price,
+                                                        volume_24: conversion_volume_24,
+                                                        market_cap: conversion_market_cap,
+                                                        pct_1h: conversion_pct_1h,
+                                                        pct_24h: conversion_pct_24h,
+                                                        pct_1week: conversion_pct_1week)
+                        
                         guard let us_price_quote = coin_prices["USD"] as? [String:AnyObject] else { return }
                         guard let us_price = us_price_quote["price"] as? Double else { return }
+                        guard let us_volume_24 = us_price_quote["volume_24"] as? Double else { return }
+                        guard let us_market_cap = us_price_quote["market_cap"] as? Double else { return }
+                        guard let us_pct_1h = us_price_quote["percent_change_1h"] as? Double else { return }
+                        guard let us_pct_24h = us_price_quote["percent_change_24h"] as? Double else { return }
+                        guard let us_pct_1week = us_price_quote["percent_change_7d"] as? Double else { return }
+                        
+                        let usd_data = PriceData(price: us_price,
+                                                 volume_24: us_volume_24,
+                                                 market_cap: us_market_cap,
+                                                 pct_1h: us_pct_1h,
+                                                 pct_24h: us_pct_24h,
+                                                 pct_1week: us_pct_1week)
+                        
                         guard let rank = coin_info["rank"] as? Int else { return }
-                        let crypto_obj = Crypto(symbol: coin_symbol, crpto_price: conversion_price, usd_price: us_price, price_history: nil, rank: rank)
+                        let crypto_obj = Crypto(symbol: coin_symbol, conversion_data: conversion_data, usd_data: usd_data, price_history: nil, rank: rank)
                         downloaded_coin_data.append(crypto_obj)
                     }
                 }

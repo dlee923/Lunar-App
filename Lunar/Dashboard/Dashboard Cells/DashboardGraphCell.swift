@@ -58,7 +58,7 @@ class DashboardGraphCell: UICollectionViewCell {
             stock_symbol_lbl.text = " \(crypto_symbol)"
         }
         
-        if let crypto_price = crypto?.crpto_price {
+        if let crypto_price = crypto?.conversion_data.price {
             stock_price_lbl.text = " \(crypto_price)"
         }
     }
