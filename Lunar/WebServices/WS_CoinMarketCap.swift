@@ -17,12 +17,21 @@ enum Convert_Currencies: String {
 }
 
 
-struct Crypto {
+class Crypto {
+    
     let symbol: String
     var conversion_data: PriceData
     var usd_data: PriceData
     var price_history: [Double]?
     var rank: Int
+    
+    init(symbol: String, conversion_data: PriceData, usd_data: PriceData, price_history: [Double]?, rank: Int){
+        self.symbol = symbol
+        self.conversion_data = conversion_data
+        self.usd_data = usd_data
+        self.rank = rank
+    }
+    
 }
 
 
@@ -101,6 +110,8 @@ class WebService_CoinMarketCap: NSObject {
     func get_all_coin_prices(start_value: Int, end_value: Int, convert_currency: Convert_Currencies, completion: @escaping ([Crypto]) -> ()) {
         let conversion_currency = convert_currency.rawValue
         guard let url_input = URL(string: self.link_ticker + "?convert=" + conversion_currency + "&start=" + String(start_value) + "&limit=" + String(end_value) + "&sort=id") else { return }
+        
+        print(url_input)
 
         var downloaded_coin_data = [Crypto]()
         
@@ -115,7 +126,7 @@ class WebService_CoinMarketCap: NSObject {
                         
                         guard let conversion_price_quote = coin_prices[conversion_currency] as? [String: AnyObject] else { return }
                         guard let conversion_price = conversion_price_quote["price"] as? Double else { return }
-                        guard let conversion_volume_24 = conversion_price_quote["volume_24"] as? Double else { return }
+                        guard let conversion_volume_24 = conversion_price_quote["volume_24h"] as? Double else { return }
                         guard let conversion_market_cap = conversion_price_quote["market_cap"] as? Double else { return }
                         guard let conversion_pct_1h = conversion_price_quote["percent_change_1h"] as? Double else { return }
                         guard let conversion_pct_24h = conversion_price_quote["percent_change_24h"] as? Double else { return }
@@ -130,7 +141,7 @@ class WebService_CoinMarketCap: NSObject {
                         
                         guard let us_price_quote = coin_prices["USD"] as? [String:AnyObject] else { return }
                         guard let us_price = us_price_quote["price"] as? Double else { return }
-                        guard let us_volume_24 = us_price_quote["volume_24"] as? Double else { return }
+                        guard let us_volume_24 = us_price_quote["volume_24h"] as? Double else { return }
                         guard let us_market_cap = us_price_quote["market_cap"] as? Double else { return }
                         guard let us_pct_1h = us_price_quote["percent_change_1h"] as? Double else { return }
                         guard let us_pct_24h = us_price_quote["percent_change_24h"] as? Double else { return }

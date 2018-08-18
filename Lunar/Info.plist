@@ -41,6 +41,10 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>spaceranger2.ttf</string>
+		<string>spaceranger1.ttf</string>
+		<string>spyagency.ttf</string>
+		<string>good_times.ttf</string>
 		<string>futureforcescondital.ttf</string>
 		<string>Simple_Tech.otf</string>
 	</array>

@@ -22,6 +22,13 @@ struct CandleStick_Price {
     var low: Double
 }
 
+enum Price_Types: String {
+    case open = "open"
+    case close = "close"
+    case low = "low"
+    case high = "high"
+}
+
 class WebService_CryptoCompare: NSObject {
     
     init(select_currency: String, convert_currency: String, interval_type: Interval_Type, interval: Int, history_length: Int) {

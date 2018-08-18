@@ -10,13 +10,18 @@ import UIKit
 
 class Graph: UIView {
     
-    init(frame: CGRect, history:[Double]) {
+    init(frame: CGRect, history:[Double], animate: Bool) {
         super.init(frame: frame)
         self.history = history
         self.backgroundColor = .white
+        self.animate = animate
     }
     
+    // graph data
     var history: [Double]?
+    
+    // graph properties
+    var animate: Bool!
 
     // axis dimensions
     var y_axis_max: Double?
@@ -34,7 +39,8 @@ class Graph: UIView {
         var x: Double?
         if let x_range = self.x_axis_width, let count = self.history?.count {
             let x_range_visible = x_range - (self.border_inset * 2)
-            x = x_range_visible / (Double(count) - 1) * number_in_series + self.border_inset
+            let x_axis_spacing = x_range_visible / (Double(count) - 1)
+            x = x_axis_spacing * number_in_series + self.border_inset
         }
         return x ?? 0.0
     }
@@ -43,7 +49,8 @@ class Graph: UIView {
         var y: Double?
         if let y_range = self.y_axis_range, let y_min = self.y_axis_min, let y_height = self.y_axis_height {
             let y_range_visible = y_height - (self.border_inset * 2)
-            y = (((price - y_min) / y_range) * y_range_visible) + self.border_inset
+            let y_position = ((price - y_min) / y_range)
+            y = (y_position * y_range_visible) + self.border_inset
         }
         return y ?? 0.0
     }
@@ -56,14 +63,11 @@ class Graph: UIView {
         }
     }
     
-    func render_graph() {
-        y_axis_assignment()
-        
+    func generate_graph(lineWidth: CGFloat, lineColor: UIColor) -> CAShapeLayer {
         let shape_layer = CAShapeLayer()
-        shape_layer.borderColor = UIColor.yellow.cgColor
         let graph_path = UIBezierPath()
         
-        guard let graph_history = self.history else { return }
+        let graph_history = self.history ?? [0]
         
         // add starting point to graph
         graph_path.move(to: CGPoint(x: convert_x_point(0), y: convert_y_point(graph_history.first ?? 0)))
@@ -77,21 +81,34 @@ class Graph: UIView {
         shape_layer.path = graph_path.cgPath
         shape_layer.lineCap = kCALineCapRound
         shape_layer.lineJoin = kCALineJoinRound
-        shape_layer.strokeColor = UIColor.purple.cgColor
-        shape_layer.lineWidth = 4.0
+        shape_layer.strokeColor = lineColor.cgColor
+        shape_layer.lineWidth = lineWidth
         shape_layer.strokeEnd = 1
         shape_layer.fillColor = UIColor.clear.cgColor
         shape_layer.position = CGPoint(x: 0, y: 0)
         
+        return shape_layer
+    }
+    
+    func animate_graph(animated_item: CAShapeLayer, duration: Double) {
         let stroke_animation = CABasicAnimation(keyPath: "strokeEnd")
         stroke_animation.fromValue = 0
         stroke_animation.toValue = 1
-        stroke_animation.duration = 2
+        stroke_animation.duration = duration
         stroke_animation.isRemovedOnCompletion = false
+        animated_item.add(stroke_animation, forKey: "strokeEnd")
+    }
+    
+    func render_graph(lineWidth: CGFloat, lineColor: UIColor, duration: Double) {
+        y_axis_assignment()
         
-        shape_layer.add(stroke_animation, forKey: "strokeEnd")
+        let graph = generate_graph(lineWidth: lineWidth, lineColor: lineColor)
         
-        self.layer.addSublayer(shape_layer)
+        if self.animate {
+            animate_graph(animated_item: graph, duration: duration)
+        }
+        
+        self.layer.addSublayer(graph)
     }
     
     required init?(coder aDecoder: NSCoder) {

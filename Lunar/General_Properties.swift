@@ -10,3 +10,7 @@ import UIKit
 
 let font_simple_tech = UIFont(name: "Simple Tech Bold 02", size: 5)
 let font_future_forces = UIFont(name: "Future Forces Condensed Italic", size: 5)
+let font_good_times = UIFont(name: "Good Times", size: 5)
+let font_space_ranger1 = UIFont(name: "Space Ranger Semi-Italic", size: 5)
+let font_space_ranger2 = UIFont(name: "Space Ranger Title Italic", size: 5)
+let font_spy_agency = UIFont(name: "Spy Agency Semi-Italic", size: 5)

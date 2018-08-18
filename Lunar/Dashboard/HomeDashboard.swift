@@ -30,7 +30,7 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     let cell_spacing: CGFloat = 5
     
     func registerCells() {
-        self.register(DashboardGraphCell.self, forCellWithReuseIdentifier: "DashboardCell")
+        self.register(DashboardStockCell.self, forCellWithReuseIdentifier: "DashboardStockCell")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -55,7 +55,7 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashboardCell", for: indexPath) as? DashboardGraphCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashboardStockCell", for: indexPath) as? DashboardStockCell {
             cell.crypto = coins?[indexPath.item]
             cell.set_up_stock_cell()
             return cell
