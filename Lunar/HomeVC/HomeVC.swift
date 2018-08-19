@@ -29,6 +29,7 @@ class HomeVC: UIViewController {
 //        add_graph_view()
     }
     
+    
     var coins: [Crypto]? {
         didSet {
             // download coin histories
@@ -126,6 +127,9 @@ class HomeVC: UIViewController {
         home_dashboard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: home_dashboard_inset_border).isActive = true
         home_dashboard.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -home_dashboard_inset_border).isActive = true
         home_dashboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: (-40)).isActive = true
+        
+//        home_dashboard.self_width = self.view.frame.width - (home_dashboard_inset_border * 2)
+//        home_dashboard.self_height = self.view.frame.height - home_dashboard_inset_border - 40
     }
     
     func add_graph_view() {

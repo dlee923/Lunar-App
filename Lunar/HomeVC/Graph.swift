@@ -49,8 +49,9 @@ class Graph: UIView {
         var y: Double?
         if let y_range = self.y_axis_range, let y_min = self.y_axis_min, let y_height = self.y_axis_height {
             let y_range_visible = y_height - (self.border_inset * 2)
-            let y_position = ((price - y_min) / y_range)
+            let y_position = 1 - ((price - y_min) / y_range)
             y = (y_position * y_range_visible) + self.border_inset
+
         }
         return y ?? 0.0
     }
@@ -59,7 +60,12 @@ class Graph: UIView {
         self.y_axis_min = self.history?.min()
         self.y_axis_max = self.history?.max()
         if let min = self.y_axis_min, let max = self.y_axis_max {
-            self.y_axis_range = max - min
+            let calculated_range = max - min
+            if calculated_range == 0 {
+                self.y_axis_range = 1
+            } else {
+                self.y_axis_range = calculated_range
+            }
         }
     }
     
@@ -75,7 +81,6 @@ class Graph: UIView {
         for x in 1..<graph_history.count {
             let point = CGPoint(x: convert_x_point(Double(x)), y: convert_y_point(graph_history[x]))
             graph_path.addLine(to: point)
-            print(point)
         }
         
         shape_layer.path = graph_path.cgPath
