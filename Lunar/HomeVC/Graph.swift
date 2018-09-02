@@ -13,7 +13,6 @@ class Graph: UIView {
     init(frame: CGRect, history:[Double], animate: Bool) {
         super.init(frame: frame)
         self.history = history
-        self.backgroundColor = .white
         self.animate = animate
     }
     
@@ -22,6 +21,10 @@ class Graph: UIView {
     
     // graph properties
     var animate: Bool!
+    
+    let lineWidth: CGFloat = 2.0
+    let lineColor: UIColor = UIColor.white
+    let duration: Double = 2.0
 
     // axis dimensions
     var y_axis_max: Double?
@@ -38,9 +41,9 @@ class Graph: UIView {
     lazy var convert_x_point = {(number_in_series: Double) -> Double in
         var x: Double?
         if let x_range = self.x_axis_width, let count = self.history?.count {
-            let x_range_visible = x_range - (self.border_inset * 2)
+            let x_range_visible = x_range
             let x_axis_spacing = x_range_visible / (Double(count) - 1)
-            x = x_axis_spacing * number_in_series + self.border_inset
+            x = x_axis_spacing * number_in_series
         }
         return x ?? 0.0
     }
@@ -69,7 +72,9 @@ class Graph: UIView {
         }
     }
     
-    func generate_graph(lineWidth: CGFloat, lineColor: UIColor) -> CAShapeLayer {
+    fileprivate func generate_graph(lineWidth: CGFloat, lineColor: UIColor, filled: Bool, background_clr: UIColor) -> CAShapeLayer {
+        self.backgroundColor = background_clr
+        
         let shape_layer = CAShapeLayer()
         let graph_path = UIBezierPath()
         
@@ -83,19 +88,25 @@ class Graph: UIView {
             graph_path.addLine(to: point)
         }
         
+        if filled {
+            graph_path.addLine(to: CGPoint(x: convert_x_point(Double(graph_history.count - 1)), y: convert_y_point(0)))
+            graph_path.addLine(to: CGPoint(x: convert_x_point(Double(0)), y: convert_y_point(0)))
+            graph_path.close()
+        }
+        
         shape_layer.path = graph_path.cgPath
         shape_layer.lineCap = kCALineCapRound
         shape_layer.lineJoin = kCALineJoinRound
-        shape_layer.strokeColor = lineColor.cgColor
+        shape_layer.strokeColor = filled ? UIColor.clear.cgColor : lineColor.cgColor
         shape_layer.lineWidth = lineWidth
         shape_layer.strokeEnd = 1
-        shape_layer.fillColor = UIColor.clear.cgColor
+        shape_layer.fillColor = filled ? UIColor.red.cgColor : UIColor.clear.cgColor
         shape_layer.position = CGPoint(x: 0, y: 0)
         
         return shape_layer
     }
     
-    func animate_graph(animated_item: CAShapeLayer, duration: Double) {
+    fileprivate func animate_graph(animated_item: CAShapeLayer, duration: Double) {
         let stroke_animation = CABasicAnimation(keyPath: "strokeEnd")
         stroke_animation.fromValue = 0
         stroke_animation.toValue = 1
@@ -104,16 +115,18 @@ class Graph: UIView {
         animated_item.add(stroke_animation, forKey: "strokeEnd")
     }
     
-    func render_graph(lineWidth: CGFloat, lineColor: UIColor, duration: Double) {
+    func render_graph(background_clr: UIColor) {
         y_axis_assignment()
         
-        let graph = generate_graph(lineWidth: lineWidth, lineColor: lineColor)
+        let line_graph = generate_graph(lineWidth: lineWidth, lineColor: lineColor, filled: false, background_clr: background_clr)
+        let filled_graph = generate_graph(lineWidth: lineWidth, lineColor: lineColor, filled: true, background_clr: background_clr)
         
         if self.animate {
-            animate_graph(animated_item: graph, duration: duration)
+            animate_graph(animated_item: line_graph, duration: duration)
         }
         
-        self.layer.addSublayer(graph)
+        self.layer.addSublayer(filled_graph)
+        self.layer.addSublayer(line_graph)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -20,14 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
+        let navControllerColor: UIColor = home_nav_color
+        
         let navController = UINavigationController(rootViewController: HomeVC())
+        navController.navigationBar.backgroundColor = navControllerColor
         navController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navController.navigationBar.shadowImage = UIImage()
+        
         
         let statusBarView: UIView = {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .green
+            view.backgroundColor = navControllerColor
             return view
         }()
         
@@ -37,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             statusBarView.topAnchor.constraint(equalTo: homeView.topAnchor).isActive = true
             statusBarView.leftAnchor.constraint(equalTo: homeView.leftAnchor).isActive = true
             statusBarView.rightAnchor.constraint(equalTo: homeView.rightAnchor).isActive = true
-            statusBarView.bottomAnchor.constraint(equalTo: navController.navigationBar.bottomAnchor).isActive = true
+            statusBarView.bottomAnchor.constraint(equalTo: navController.navigationBar.topAnchor, constant: 0).isActive = true
         }
         
         window?.rootViewController = navController

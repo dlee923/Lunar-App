@@ -14,3 +14,7 @@ let font_good_times = UIFont(name: "Good Times", size: 5)
 let font_space_ranger1 = UIFont(name: "Space Ranger Semi-Italic", size: 5)
 let font_space_ranger2 = UIFont(name: "Space Ranger Title Italic", size: 5)
 let font_spy_agency = UIFont(name: "Spy Agency Semi-Italic", size: 5)
+let font_share_tech = UIFont(name: "Share Tech", size: 5)
+
+let home_dashboard_color: UIColor = .red
+let home_nav_color: UIColor = .brown

@@ -41,6 +41,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>ShareTech.ttf</string>
 		<string>spaceranger2.ttf</string>
 		<string>spaceranger1.ttf</string>
 		<string>spyagency.ttf</string>

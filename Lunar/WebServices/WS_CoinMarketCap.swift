@@ -20,13 +20,15 @@ enum Convert_Currencies: String {
 class Crypto {
     
     let symbol: String
+    let name: String
     var conversion_data: PriceData
     var usd_data: PriceData
     var price_history: [Double]?
     var rank: Int
     
-    init(symbol: String, conversion_data: PriceData, usd_data: PriceData, price_history: [Double]?, rank: Int){
+    init(symbol: String, name: String, conversion_data: PriceData, usd_data: PriceData, price_history: [Double]?, rank: Int){
         self.symbol = symbol
+        self.name = name
         self.conversion_data = conversion_data
         self.usd_data = usd_data
         self.rank = rank
@@ -122,6 +124,7 @@ class WebService_CoinMarketCap: NSObject {
                     for coin_object in coin_data {
                         guard let coin_info = coin_object.value as? [String:AnyObject] else { return }
                         guard let coin_symbol = coin_info["symbol"] as? String else { return }
+                        guard let coin_name = coin_info["name"] as? String else { return }
                         guard let coin_prices = coin_info["quotes"] as? [String: AnyObject] else { return }
                         
                         guard let conversion_price_quote = coin_prices[conversion_currency] as? [String: AnyObject] else { return }
@@ -155,7 +158,7 @@ class WebService_CoinMarketCap: NSObject {
                                                  pct_1week: us_pct_1week)
                         
                         guard let rank = coin_info["rank"] as? Int else { return }
-                        let crypto_obj = Crypto(symbol: coin_symbol, conversion_data: conversion_data, usd_data: usd_data, price_history: nil, rank: rank)
+                        let crypto_obj = Crypto(symbol: coin_symbol, name: coin_name, conversion_data: conversion_data, usd_data: usd_data, price_history: nil, rank: rank)
                         downloaded_coin_data.append(crypto_obj)
                     }
                 }
