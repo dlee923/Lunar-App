@@ -22,8 +22,7 @@ class Graph: UIView {
     // graph properties
     var animate: Bool!
     
-    let lineWidth: CGFloat = 2.0
-    let lineColor: UIColor = UIColor.white
+    let lineColor: UIColor = Theme_color3
     let duration: Double = 2.0
 
     // axis dimensions
@@ -89,8 +88,8 @@ class Graph: UIView {
         }
         
         if filled {
-            graph_path.addLine(to: CGPoint(x: convert_x_point(Double(graph_history.count - 1)), y: convert_y_point(0)))
-            graph_path.addLine(to: CGPoint(x: convert_x_point(Double(0)), y: convert_y_point(0)))
+            graph_path.addLine(to: CGPoint(x: convert_x_point(Double(graph_history.count - 1)), y: ((self.y_axis_height ?? 0) + (self.border_inset * 2))))
+            graph_path.addLine(to: CGPoint(x: convert_x_point(Double(0)), y: ((self.y_axis_height ?? 0) + (self.border_inset * 2))))
             graph_path.close()
         }
         
@@ -100,7 +99,7 @@ class Graph: UIView {
         shape_layer.strokeColor = filled ? UIColor.clear.cgColor : lineColor.cgColor
         shape_layer.lineWidth = lineWidth
         shape_layer.strokeEnd = 1
-        shape_layer.fillColor = filled ? UIColor.red.cgColor : UIColor.clear.cgColor
+        shape_layer.fillColor = filled ? Theme_color1.cgColor : UIColor.clear.cgColor
         shape_layer.position = CGPoint(x: 0, y: 0)
         
         return shape_layer
@@ -115,7 +114,7 @@ class Graph: UIView {
         animated_item.add(stroke_animation, forKey: "strokeEnd")
     }
     
-    func render_graph(background_clr: UIColor) {
+    func render_graph(background_clr: UIColor, lineWidth: CGFloat) {
         y_axis_assignment()
         
         let line_graph = generate_graph(lineWidth: lineWidth, lineColor: lineColor, filled: false, background_clr: background_clr)

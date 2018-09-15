@@ -36,8 +36,8 @@ class DashboardPortfolioCell: UICollectionViewCell {
     
     fileprivate func add_graph_spacer(portfolio_graph: Graph) {
         let spacer = UIView()
-        self.insertSubview(spacer, aboveSubview: self)
-        spacer.backgroundColor = home_dashboard_color
+        self.insertSubview(spacer, belowSubview: portfolio_graph)
+        spacer.backgroundColor = Theme_color1
         spacer.translatesAutoresizingMaskIntoConstraints = false
         spacer.topAnchor.constraint(equalTo: portfolio_graph.bottomAnchor, constant: -(inset_border * 3)).isActive = true
         spacer.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
@@ -46,7 +46,7 @@ class DashboardPortfolioCell: UICollectionViewCell {
     }
     
     fileprivate func add_graph_view(animate: Bool) {
-        let empty_price_history: [Double] = [0, 10, 0, 5, 0, 0, 3, 1, 7, 0, 0]
+        let empty_price_history: [Double] = [10, 25, 13, 16, 12, 21, 22, 18]
         let crypto_history = self.price_history ?? empty_price_history
         
         let graph_width = self.frame.width
@@ -69,16 +69,16 @@ class DashboardPortfolioCell: UICollectionViewCell {
             
             portfolio_graph_view.x_axis_width = Double(graph_width)
             portfolio_graph_view.y_axis_height = Double(graph_height - portfolio_total_height)
-            portfolio_graph_view.render_graph(background_clr: home_nav_color)
+            portfolio_graph_view.render_graph(background_clr: Theme_color2, lineWidth: 4.0)
             
             
         }
     }
     
     fileprivate func add_portfolio_total() {
-        portfolio_ttl_lbl.style_portfolio_performance_label(font_size: 35, font_color: .black, autolayout: false)
+        portfolio_ttl_lbl.style_portfolio_performance_label(font_size: 45, font_color: Theme_color3, autolayout: false)
         portfolio_ttl_lbl.text = "$\(self.portfolio_total ?? 0.01)"
-        portfolio_ttl_lbl.backgroundColor = home_nav_color
+        portfolio_ttl_lbl.backgroundColor = Theme_color2
         self.addSubview(portfolio_ttl_lbl)
         
         portfolio_ttl_lbl.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

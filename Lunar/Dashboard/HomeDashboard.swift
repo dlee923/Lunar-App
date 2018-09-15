@@ -12,12 +12,20 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: UICollectionViewFlowLayout())
-        self.backgroundColor = home_dashboard_color
+        self.backgroundColor = .clear
+        
         self.dataSource = self
         self.delegate = self
         
         registerCells()
+
+        add_background()
     }
+    
+    let cell_spacing: CGFloat = 5
+    let portfolio_graph_height: CGFloat = 200
+    let stock_cell_height: CGFloat = 75
+    let header_cell_height: CGFloat = 100
     
     var coins: [Crypto]? {
         didSet{
@@ -30,19 +38,43 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
             
             for cell in self.visibleCells {
                 if let stock_cell = cell as? DashboardStockCell {
-                    stock_cell.stock_graph?.render_graph(background_clr: .clear)
+                    stock_cell.stock_graph?.render_graph(background_clr: .clear, lineWidth: 2.0)
                 }
             }
         }
     }
     
     weak var homeVC: HomeVC?
+    var background_bottom_anchor: NSLayoutConstraint?
     
-    let cell_spacing: CGFloat = 5
+    // Drape a background to give continuity between dashboard and navigation bar
+    func add_background() {
+        let back_view = UIView()
+        back_view.backgroundColor = Theme_color2
+        back_view.translatesAutoresizingMaskIntoConstraints = false
+        self.homeVC?.view.insertSubview(back_view, belowSubview: self)
+        
+        guard let home_VC = homeVC else { return }
+        
+        back_view.topAnchor.constraint(equalTo: home_VC.view.topAnchor, constant: 0).isActive = true
+        back_view.leadingAnchor.constraint(equalTo: home_VC.view.leadingAnchor).isActive = true
+        back_view.trailingAnchor.constraint(equalTo: home_VC.view.trailingAnchor).isActive = true
+        background_bottom_anchor = back_view.bottomAnchor.constraint(equalTo: home_VC.home_dashboard.topAnchor)
+        background_bottom_anchor?.isActive = true
+    }
+    
+    // Use didScroll to manage background drape of portfolio graph
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = -scrollView.contentOffset.y + 87
+        if offset > 0 {
+            background_bottom_anchor?.constant = offset
+        }
+    }
     
     func registerCells() {
         self.register(DashboardStockCell.self, forCellWithReuseIdentifier: "DashboardStockCell")
         self.register(DashboardPortfolioCell.self, forCellWithReuseIdentifier: "DashboardPortfolioCell")
+        self.register(DashboardHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderCell")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -57,28 +89,16 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         return coins?.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width: CGFloat?
-        var height: CGFloat?
-
-        if indexPath.section == 0 {
-            width = self.frame.width
-            height = 200
-        } else if indexPath.section == 1 {
-            width = ((self.frame.width) / 2) - (cell_spacing / 2)
-            height = (width ?? 0) / 2
-        }
-        
-        return CGSize(width: width ?? 0, height: height ?? 0)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cell_spacing
+        return cell_spacing * 2
     }
+    
+    
+    // MARK: Content Cells
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
@@ -89,6 +109,42 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashboardStockCell", for: indexPath) as? DashboardStockCell {
                 cell.crypto = coins?[indexPath.item]
                 cell.set_up_stock_cell()
+                return cell
+            }
+        }
+        
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width: CGFloat?
+        var height: CGFloat?
+        
+        if indexPath.section == 0 {
+            width = self.frame.width
+            height = portfolio_graph_height
+        } else if indexPath.section == 1 {
+            width = (self.frame.width) - (cell_spacing * 4)
+            height = stock_cell_height
+        }
+        
+        return CGSize(width: width ?? 0, height: height ?? 0)
+    }
+    
+
+    // MARK: Header Cells
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 1 {
+            return CGSize(width: self.frame.width, height: header_cell_height)
+        }
+        return CGSize.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if indexPath.section == 1 {
+            if let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderCell", for: indexPath) as? DashboardHeaderCell {
+                cell.set_up(header_title: "P o s i t i o n s")
                 return cell
             }
         }

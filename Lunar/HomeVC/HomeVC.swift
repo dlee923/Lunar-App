@@ -13,7 +13,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = Theme_color1
         // Do any additional setup after loading the view, typically from a nib.
         
         /*
@@ -33,10 +33,13 @@ class HomeVC: UIViewController {
         test_coin_data()
         
         self.navigationItem.titleView = title_label
-//        self.navigationItem.title = self.app_title
+        
+        self.navigationItem.leftBarButtonItem = set_up_navigation(button_size: 30, button_image: #imageLiteral(resourceName: "menu2_150"))
+        self.navigationItem.rightBarButtonItem = set_up_profile(button_size: 30, button_image: nil)
     }
     
     let app_title = "Lunar"
+    let home_dashboard_inset_border: CGFloat = 0
     
     var coins: [Crypto]? {
         didSet {
@@ -44,14 +47,24 @@ class HomeVC: UIViewController {
             home_dashboard.coins = self.coins
         }
     }
-    
-    let home_dashboard_inset_border: CGFloat = 0
-    
+    var is_menu_displayed: Bool = false
+    var settings_view_center: NSLayoutConstraint?
     weak var home_dashboard: HomeDashboard!
+    
+    lazy var title_label: UILabel = {
+        let title_label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        title_label.text = self.app_title
+        title_label.textAlignment = .center
+        title_label.font = font_space_ranger2?.withSize(20)
+        title_label.textColor = Theme_color1
+        return title_label
+    }()
+    
+    var settings_view: SettingsView?
     
 
 // MARK: Multiple Coin Functions
-    func download_coinmarketcap_data(select_currency: String) {
+    fileprivate func download_coinmarketcap_data(select_currency: String) {
         let CMC = WebService_CoinMarketCap(select_currency: select_currency)
         
         CMC.get_all_coin_prices(start_value: 1, end_value: 10, convert_currency: Convert_Currencies.litecoin) {(coin_prices) in
@@ -63,7 +76,7 @@ class HomeVC: UIViewController {
         }
     }
     
-    func download_coin_histories(coins: [Crypto]) {
+    fileprivate func download_coin_histories(coins: [Crypto]) {
         for coin in coins {
             let symbol = coin.symbol
             let price_history = download_crypto_compare_data(select_currency: symbol, convert_currency: "USD", interval_type: .minute, interval: 5, history_length: 10, type: .close)
@@ -73,7 +86,7 @@ class HomeVC: UIViewController {
     
     
 // MARK: Singular Coin Functions
-    func download_crypto_compare_data(select_currency: String, convert_currency: String, interval_type: Interval_Type, interval: Int, history_length: Int, type: Price_Types) -> [Double] {
+    fileprivate func download_crypto_compare_data(select_currency: String, convert_currency: String, interval_type: Interval_Type, interval: Int, history_length: Int, type: Price_Types) -> [Double] {
         let CC = WebService_CryptoCompare(select_currency: select_currency, convert_currency: convert_currency, interval_type: interval_type, interval: interval, history_length: history_length)
         
         var price_history: [Double]?
@@ -114,32 +127,6 @@ class HomeVC: UIViewController {
         }
         
         return price_history
-    }
-
-    
-// MARK: Home View Functions
-    func set_up_home_dashboard() {
-        home_dashboard = HomeDashboard()
-        home_dashboard.homeVC = self
-        self.view.addSubview(home_dashboard)
-        home_dashboard.translatesAutoresizingMaskIntoConstraints = false
-        home_dashboard.topAnchor.constraint(equalTo: self.view.topAnchor, constant: home_dashboard_inset_border).isActive = true
-        home_dashboard.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: home_dashboard_inset_border).isActive = true
-        home_dashboard.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -home_dashboard_inset_border).isActive = true
-        home_dashboard.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: (-40)).isActive = true
-    }
-    
-    func add_graph_view() {
-        let graph = Graph(frame: CGRect(x: 0, y: 100, width: self.view.frame.width, height: 200), history: [10, 30, 10, 30, 10, 30], animate: true)
-        graph.x_axis_width = Double(self.view.frame.width)
-        graph.y_axis_height = 200
-        graph.render_graph(background_clr: .clear)
-        self.view.addSubview(graph)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
@@ -222,19 +209,9 @@ class HomeVC: UIViewController {
         self.coins = coin_list
     }
     
-    lazy var title_label: UILabel = {
-        let title_label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
-        title_label.text = self.app_title
-        title_label.textAlignment = .center
-        title_label.font = font_space_ranger2?.withSize(20)
-        title_label.textColor = .black
-        return title_label
-    }()
-    
-    func set_up_title() {
-        
-        print("title added")
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-
 }
 

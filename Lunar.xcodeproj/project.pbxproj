@@ -15,6 +15,9 @@
 		70A0AEF72128D04C007D7FDC /* spaceranger1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */; };
 		70A0AEFC2128D2C5007D7FDC /* spaceranger2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */; };
 		70A0AEFE212A3231007D7FDC /* DashboardPortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0AEFD212A3231007D7FDC /* DashboardPortfolioCell.swift */; };
+		70A0E785214D3BB400BE34E7 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0E784214D3BB400BE34E7 /* Crypto.swift */; };
+		70A0E787214D415500BE34E7 /* Time_Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0E786214D415500BE34E7 /* Time_Picker.swift */; };
+		70A0E789214DCAE700BE34E7 /* Conversion_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0E788214DCAE700BE34E7 /* Conversion_Button.swift */; };
 		70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F620F2724200E255E8 /* AppDelegate.swift */; };
 		70B601F920F2724200E255E8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B601F820F2724200E255E8 /* HomeVC.swift */; };
 		70B601FC20F2724200E255E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B601FA20F2724200E255E8 /* Main.storyboard */; };
@@ -22,12 +25,15 @@
 		70B6020120F2724300E255E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020020F2724300E255E8 /* Assets.xcassets */; };
 		70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B6020220F2724300E255E8 /* LaunchScreen.storyboard */; };
 		70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */; };
+		70B78DF52147C64400ED0838 /* spyagency.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70B78DF42147C64400ED0838 /* spyagency.ttf */; };
+		70B78DF72147C67100ED0838 /* ShareTech.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70B78DF62147C67100ED0838 /* ShareTech.ttf */; };
 		70CB1D0F20FC19D80002657B /* Simple_Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70CB1D0E20FC19D80002657B /* Simple_Tech.otf */; };
 		70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB1D1020FC1AD70002657B /* General_Properties.swift */; };
 		70CF13B22106C760007453DB /* futureforcescondital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70CF13B12106C760007453DB /* futureforcescondital.ttf */; };
-		70D68AEB213B90CB004A5625 /* ShareTech.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70D68AE9213B90CB004A5625 /* ShareTech.ttf */; };
-		70D68AEC213B90CB004A5625 /* spyagency.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70D68AEA213B90CB004A5625 /* spyagency.ttf */; };
-		70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */; };
+		70D68AEE213C3207004A5625 /* spaceranger3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70D68AED213C3207004A5625 /* spaceranger3.ttf */; };
+		70D68AF0213D75C5004A5625 /* Home_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D68AEF213D75C5004A5625 /* Home_View.swift */; };
+		70D68AF2213D8F27004A5625 /* DashboardHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D68AF1213D8F27004A5625 /* DashboardHeaderCell.swift */; };
+		70F6AD0420F2FEE200BEB7D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F6AD0320F2FEE200BEB7D7 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,9 @@
 		70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger1.ttf; sourceTree = "<group>"; };
 		70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger2.ttf; sourceTree = "<group>"; };
 		70A0AEFD212A3231007D7FDC /* DashboardPortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPortfolioCell.swift; sourceTree = "<group>"; };
+		70A0E784214D3BB400BE34E7 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		70A0E786214D415500BE34E7 /* Time_Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_Picker.swift; sourceTree = "<group>"; };
+		70A0E788214DCAE700BE34E7 /* Conversion_Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion_Button.swift; sourceTree = "<group>"; };
 		70B601F320F2724200E255E8 /* Lunar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lunar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B601F620F2724200E255E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B601F820F2724200E255E8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -48,12 +57,15 @@
 		70B6020320F2724300E255E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B6020520F2724300E255E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WS_CoinMarketCap.swift; sourceTree = "<group>"; };
+		70B78DF42147C64400ED0838 /* spyagency.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spyagency.ttf; sourceTree = "<group>"; };
+		70B78DF62147C67100ED0838 /* ShareTech.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShareTech.ttf; sourceTree = "<group>"; };
 		70CB1D0E20FC19D80002657B /* Simple_Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple_Tech.otf; sourceTree = "<group>"; };
 		70CB1D1020FC1AD70002657B /* General_Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General_Properties.swift; sourceTree = "<group>"; };
 		70CF13B12106C760007453DB /* futureforcescondital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futureforcescondital.ttf; sourceTree = "<group>"; };
-		70D68AE9213B90CB004A5625 /* ShareTech.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ShareTech.ttf; path = ../../../../.Trash/ShareTech.ttf; sourceTree = "<group>"; };
-		70D68AEA213B90CB004A5625 /* spyagency.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = spyagency.ttf; path = ../../../../.Trash/spyagency.ttf; sourceTree = "<group>"; };
-		70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		70D68AED213C3207004A5625 /* spaceranger3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger3.ttf; sourceTree = "<group>"; };
+		70D68AEF213D75C5004A5625 /* Home_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_View.swift; sourceTree = "<group>"; };
+		70D68AF1213D8F27004A5625 /* DashboardHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderCell.swift; sourceTree = "<group>"; };
+		70F6AD0320F2FEE200BEB7D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +92,18 @@
 			isa = PBXGroup;
 			children = (
 				70B601F820F2724200E255E8 /* HomeVC.swift */,
+				70D68AEF213D75C5004A5625 /* Home_View.swift */,
 				7006C9B4210CFE1F00178223 /* Graph.swift */,
 			);
 			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		70A0E783214D3B9E00BE34E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70A0E784214D3BB400BE34E7 /* Crypto.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		70B601EA20F2724200E255E8 = {
@@ -107,10 +128,11 @@
 				70B601F620F2724200E255E8 /* AppDelegate.swift */,
 				70D68AE4213B906F004A5625 /* Fonts */,
 				70CB1D1020FC1AD70002657B /* General_Properties.swift */,
+				70A0E783214D3B9E00BE34E7 /* Model */,
 				7006C9B2210CFDC100178223 /* WebServices */,
 				7006C9B3210CFDD300178223 /* HomeVC */,
 				70CB1D0C20FC067D0002657B /* Dashboard */,
-				70F6AD0320F2FEE200BEB7D7 /* MenuView.swift */,
+				70F6AD0320F2FEE200BEB7D7 /* SettingsView.swift */,
 				70B601FA20F2724200E255E8 /* Main.storyboard */,
 				70B6020020F2724300E255E8 /* Assets.xcassets */,
 				70B6020220F2724300E255E8 /* LaunchScreen.storyboard */,
@@ -132,8 +154,11 @@
 		70CB1D0D20FC06910002657B /* Dashboard Cells */ = {
 			isa = PBXGroup;
 			children = (
-				705C5E4D20F6F46400FEF60B /* DashboardStockCell.swift */,
 				70A0AEFD212A3231007D7FDC /* DashboardPortfolioCell.swift */,
+				705C5E4D20F6F46400FEF60B /* DashboardStockCell.swift */,
+				70D68AF1213D8F27004A5625 /* DashboardHeaderCell.swift */,
+				70A0E786214D415500BE34E7 /* Time_Picker.swift */,
+				70A0E788214DCAE700BE34E7 /* Conversion_Button.swift */,
 			);
 			path = "Dashboard Cells";
 			sourceTree = "<group>";
@@ -144,10 +169,11 @@
 				70CB1D0E20FC19D80002657B /* Simple_Tech.otf */,
 				70A0AEF42128CF8C007D7FDC /* good_times.ttf */,
 				70CF13B12106C760007453DB /* futureforcescondital.ttf */,
-				70D68AE9213B90CB004A5625 /* ShareTech.ttf */,
-				70D68AEA213B90CB004A5625 /* spyagency.ttf */,
+				70B78DF62147C67100ED0838 /* ShareTech.ttf */,
+				70B78DF42147C64400ED0838 /* spyagency.ttf */,
 				70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */,
 				70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */,
+				70D68AED213C3207004A5625 /* spaceranger3.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -210,15 +236,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D68AEE213C3207004A5625 /* spaceranger3.ttf in Resources */,
 				70CF13B22106C760007453DB /* futureforcescondital.ttf in Resources */,
 				70B6020420F2724300E255E8 /* LaunchScreen.storyboard in Resources */,
 				70B6020120F2724300E255E8 /* Assets.xcassets in Resources */,
 				70A0AEF72128D04C007D7FDC /* spaceranger1.ttf in Resources */,
 				70B601FC20F2724200E255E8 /* Main.storyboard in Resources */,
 				70A0AEFC2128D2C5007D7FDC /* spaceranger2.ttf in Resources */,
-				70D68AEB213B90CB004A5625 /* ShareTech.ttf in Resources */,
+				70B78DF72147C67100ED0838 /* ShareTech.ttf in Resources */,
 				70CB1D0F20FC19D80002657B /* Simple_Tech.otf in Resources */,
-				70D68AEC213B90CB004A5625 /* spyagency.ttf in Resources */,
+				70B78DF52147C64400ED0838 /* spyagency.ttf in Resources */,
 				70A0AEF52128CF8D007D7FDC /* good_times.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,16 +257,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F6AD0420F2FEE200BEB7D7 /* MenuView.swift in Sources */,
+				70F6AD0420F2FEE200BEB7D7 /* SettingsView.swift in Sources */,
+				70D68AF0213D75C5004A5625 /* Home_View.swift in Sources */,
 				70B601F920F2724200E255E8 /* HomeVC.swift in Sources */,
 				70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */,
+				70D68AF2213D8F27004A5625 /* DashboardHeaderCell.swift in Sources */,
+				70A0E787214D415500BE34E7 /* Time_Picker.swift in Sources */,
 				7006C9B1210C14DD00178223 /* WS_CryptoCompare.swift in Sources */,
 				7006C9B5210CFE1F00178223 /* Graph.swift in Sources */,
+				70A0E789214DCAE700BE34E7 /* Conversion_Button.swift in Sources */,
 				70A0AEFE212A3231007D7FDC /* DashboardPortfolioCell.swift in Sources */,
 				705C5E4C20F6F05400FEF60B /* HomeDashboard.swift in Sources */,
 				70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */,
 				70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */,
 				705C5E4E20F6F46400FEF60B /* DashboardStockCell.swift in Sources */,
+				70A0E785214D3BB400BE34E7 /* Crypto.swift in Sources */,
 				70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

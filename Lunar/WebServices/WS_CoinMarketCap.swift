@@ -17,36 +17,6 @@ enum Convert_Currencies: String {
 }
 
 
-class Crypto {
-    
-    let symbol: String
-    let name: String
-    var conversion_data: PriceData
-    var usd_data: PriceData
-    var price_history: [Double]?
-    var rank: Int
-    
-    init(symbol: String, name: String, conversion_data: PriceData, usd_data: PriceData, price_history: [Double]?, rank: Int){
-        self.symbol = symbol
-        self.name = name
-        self.conversion_data = conversion_data
-        self.usd_data = usd_data
-        self.rank = rank
-    }
-    
-}
-
-
-struct PriceData {
-    var price: Double
-    var volume_24: Double
-    var market_cap: Double
-    var pct_1h: Double
-    var pct_24h: Double
-    var pct_1week: Double
-}
-
-
 class WebService_CoinMarketCap: NSObject {
     
     let link_listings: String = "https://api.coinmarketcap.com/v2/listings/"
