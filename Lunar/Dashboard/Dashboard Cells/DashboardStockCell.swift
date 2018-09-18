@@ -44,14 +44,17 @@ class DashboardStockCell: UICollectionViewCell {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        super.touchesBegan(touches, with: event)
+        self.backgroundColor = Cell_highlight_color
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         self.backgroundColor = Cell_color
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
         self.backgroundColor = Cell_color
     }
     

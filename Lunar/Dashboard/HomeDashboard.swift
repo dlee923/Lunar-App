@@ -72,21 +72,26 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     func registerCells() {
+        self.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "DefaultCell")
         self.register(DashboardStockCell.self, forCellWithReuseIdentifier: "DashboardStockCell")
         self.register(DashboardPortfolioCell.self, forCellWithReuseIdentifier: "DashboardPortfolioCell")
         self.register(DashboardHeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderCell")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return 1
+        } else if section == 1{
+            return 1
+        } else if section == 2{
+            return coins?.count ?? 0
         }
         
-        return coins?.count ?? 0
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -106,6 +111,11 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
                 return cell
             }
         } else if indexPath.section == 1 {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DefaultCell", for: indexPath) as? UICollectionViewCell {
+                cell.backgroundColor = Cell_color
+                return cell
+            }
+        } else if indexPath.section == 2 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashboardStockCell", for: indexPath) as? DashboardStockCell {
                 cell.crypto = coins?[indexPath.item]
                 cell.set_up_stock_cell()
@@ -124,6 +134,9 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
             width = self.frame.width
             height = portfolio_graph_height
         } else if indexPath.section == 1 {
+            width = stock_cell_height
+            height = stock_cell_height
+        } else if indexPath.section == 2 {
             width = (self.frame.width) - (cell_spacing * 4)
             height = stock_cell_height
         }
@@ -137,12 +150,20 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 1 {
             return CGSize(width: self.frame.width, height: header_cell_height)
+        } else if section == 2 {
+            return CGSize(width: self.frame.width, height: header_cell_height / 2)
         }
+        
         return CGSize.zero
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if indexPath.section == 1 {
+            if let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderCell", for: indexPath) as? DashboardHeaderCell {
+                cell.set_up(header_title: "W a t c h l i s t")
+                return cell
+            }
+        } else if indexPath.section == 2 {
             if let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderCell", for: indexPath) as? DashboardHeaderCell {
                 cell.set_up(header_title: "P o s i t i o n s")
                 return cell

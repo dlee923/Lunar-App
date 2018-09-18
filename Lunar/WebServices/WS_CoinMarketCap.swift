@@ -14,8 +14,9 @@ enum Convert_Currencies: String {
     case ethereum = "ETH"
     case USD = "USD"
     case litecoin = "LTC"
+    
+    static let all_values = [bitcoin, bitcoin_cash, ethereum, USD, litecoin]
 }
-
 
 class WebService_CoinMarketCap: NSObject {
     

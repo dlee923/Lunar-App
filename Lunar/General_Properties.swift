@@ -22,6 +22,7 @@ let Theme_color2: UIColor = UIColor(red: 135/255, green: 197/255, blue: 194/255,
 let Theme_color3: UIColor = UIColor(red: 223/255, green: 210/255, blue: 175/255, alpha: 1)  // khaki
 
 let Cell_color = UIColor.gray.withAlphaComponent(0.1)
+let Cell_highlight_color = UIColor.white.withAlphaComponent(0.3)
 
 func currencyConverter(aDouble: Double...) -> String{
     
