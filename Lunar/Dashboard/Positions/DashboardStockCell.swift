@@ -12,50 +12,34 @@ extension UILabel {
     
     func style_stock_symbol_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
-        self.font = font_space_ranger3?.withSize(font_size)
+        self.font = Fonts.font_space_ranger3?.withSize(font_size)
         self.textColor = font_color
     }
     
     func style_stock_name_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
-        self.font = font_share_tech?.withSize(font_size)
+        self.font = Fonts.font_share_tech?.withSize(font_size)
         self.textColor = font_color
     }
     
     func style_stock_price_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
         self.textColor = font_color
-        self.font = font_share_tech?.withSize(font_size)
+        self.font = Fonts.font_share_tech?.withSize(font_size)
     }
     
     func style_stock_usd_price_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
         self.textColor = font_color
-        self.font = font_spy_agency?.withSize(font_size)
+        self.font = Fonts.font_spy_agency?.withSize(font_size)
     }
 }
 
-class DashboardStockCell: UICollectionViewCell {
+
+class DashboardStockCell: DashboardBaseCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = 15
-        self.backgroundColor = Cell_color
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.backgroundColor = Cell_highlight_color
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        self.backgroundColor = Cell_color
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        self.backgroundColor = Cell_color
     }
     
     let roof_border: CGFloat = 5
@@ -76,7 +60,7 @@ class DashboardStockCell: UICollectionViewCell {
     let layout_helper = false
     
     /*
-     sections MUST equal 1.0 to be spaced out correctly
+     sections MUST be less than 1.0 to be spaced out correctly
      */
     let section_1_width: CGFloat = 0
     let section_2_width: CGFloat = 0.2

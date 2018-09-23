@@ -49,7 +49,7 @@ class Time_Picker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
-        label.font = font_space_ranger1?.withSize(self.font_size_chartoption)
+        label.font = Fonts.font_space_ranger1?.withSize(self.font_size_chartoption)
         view.addSubview(label)
         
         label.translatesAutoresizingMaskIntoConstraints = false

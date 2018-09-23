@@ -17,7 +17,7 @@ class DashboardHeaderCell: UICollectionViewCell {
     
     let header_label: UILabel = {
         let header_label = UILabel()
-        header_label.font = font_share_tech?.withSize(18)
+        header_label.font = Fonts.font_share_tech?.withSize(18)
         header_label.textColor = Theme_color3
         header_label.translatesAutoresizingMaskIntoConstraints = false
         return header_label

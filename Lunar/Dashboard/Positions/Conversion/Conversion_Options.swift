@@ -47,7 +47,7 @@ class Conversion_Options: UITableView, UITableViewDelegate, UITableViewDataSourc
         cell.backgroundColor = Theme_color3
         cell.textLabel?.text = options[indexPath.row]
         cell.textLabel?.textAlignment = .center
-        cell.textLabel?.font = font_space_ranger3?.withSize(15)
+        cell.textLabel?.font = Fonts.font_space_ranger3?.withSize(15)
         return cell
     }
 

@@ -23,7 +23,7 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     let cell_spacing: CGFloat = 5
-    let portfolio_graph_height: CGFloat = 200
+    let portfolio_graph_height: CGFloat = 0.246
     let stock_cell_height: CGFloat = 75
     let header_cell_height: CGFloat = 100
     
@@ -111,10 +111,15 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
                 return cell
             }
         } else if indexPath.section == 1 {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DefaultCell", for: indexPath) as? UICollectionViewCell {
-                cell.backgroundColor = Cell_color
-                return cell
-            }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DefaultCell", for: indexPath)
+            let watchlistView = WatchlistView()
+            cell.addSubview(watchlistView)
+            watchlistView.translatesAutoresizingMaskIntoConstraints = false
+            watchlistView.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
+            watchlistView.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+            watchlistView.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
+            watchlistView.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
+            return cell
         } else if indexPath.section == 2 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashboardStockCell", for: indexPath) as? DashboardStockCell {
                 cell.crypto = coins?[indexPath.item]
@@ -132,10 +137,10 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         
         if indexPath.section == 0 {
             width = self.frame.width
-            height = portfolio_graph_height
+            height = portfolio_graph_height * (self.homeVC?.view.frame.height ?? 0)
         } else if indexPath.section == 1 {
-            width = stock_cell_height
-            height = stock_cell_height
+            width = self.frame.width
+            height = stock_cell_height * 1.25
         } else if indexPath.section == 2 {
             width = (self.frame.width) - (cell_spacing * 4)
             height = stock_cell_height

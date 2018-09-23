@@ -55,7 +55,7 @@ class HomeVC: UIViewController {
         let title_label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
         title_label.text = self.app_title
         title_label.textAlignment = .center
-        title_label.font = font_space_ranger2?.withSize(20)
+        title_label.font = Fonts.font_space_ranger2?.withSize(20)
         title_label.textColor = Theme_color1
         return title_label
     }()

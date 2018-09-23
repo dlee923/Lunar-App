@@ -11,7 +11,7 @@ import UIKit
 extension UILabel {
     
     func style_portfolio_performance_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
-        self.font = font_share_tech?.withSize(font_size)
+        self.font = Fonts.font_share_tech?.withSize(font_size)
         self.textAlignment = .center
         self.textColor = font_color
         self.translatesAutoresizingMaskIntoConstraints = autolayout
