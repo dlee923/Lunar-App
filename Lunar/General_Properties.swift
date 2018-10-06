@@ -32,21 +32,17 @@ extension UIColor {
     static let No_Tendies_color: UIColor = UIColor(red: 245/255, green: 113/255, blue: 130/255, alpha: 1)
 }
 
-func currencyConverter(aDouble: Double...) -> String{
-    
-    var aDoubleTTL: Double = 0
-    for x in aDouble {
-        aDoubleTTL += x
+extension Double {
+    func convertToUSD() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.usesGroupingSeparator = true
+        formatter.locale = NSLocale.current
+        //    formatter.maximumFractionDigits = 0
+        
+        let newValue = formatter.string(for: self)
+        return newValue!
     }
-    
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .currency
-    formatter.usesGroupingSeparator = true
-    formatter.locale = NSLocale.current
-//    formatter.maximumFractionDigits = 0
-    
-    let newValue = formatter.string(for: aDoubleTTL)
-    return newValue!
 }
 
 enum CornerRadius: CGFloat {

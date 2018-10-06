@@ -28,7 +28,7 @@ class CoinVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.Theme_color1
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+        view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 75).isActive = true
         view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
         view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
@@ -49,7 +49,7 @@ class CoinVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.2) {
-            self.blur_view.alpha = 1
+            self.blur_view.alpha = 0.5
         }
     }
     

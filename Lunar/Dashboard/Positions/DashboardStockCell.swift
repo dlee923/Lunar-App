@@ -119,7 +119,7 @@ class DashboardStockCell: DashboardBaseCell {
         }
         
         if let usd_price = crypto?.usd_data.price {
-            usd_price_lbl.text = "\(currencyConverter(aDouble: usd_price))"
+            usd_price_lbl.text = "\(usd_price.convertToUSD())"
         }
     }
     

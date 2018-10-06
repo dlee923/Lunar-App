@@ -235,7 +235,7 @@ class WatchlistCell: DashboardBaseCell {
     }
     
     fileprivate func assign_cell_labels() {
-        usd_price_lbl.text = currencyConverter(aDouble: self.crypto?.usd_data.price ?? 0)
+        usd_price_lbl.text = self.crypto?.usd_data.price.convertToUSD()
         symbol_lbl.text = self.crypto?.symbol
         name_lbl.text = self.crypto?.name
         h1_lbl.text = "\(self.crypto?.usd_data.pct_1h ?? 0)"
