@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+var statusBarView: UIView?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        let navControllerColor: UIColor = Theme_color2
+        let navControllerColor: UIColor = Colors.Theme_color2
         
         let navController = UINavigationController(rootViewController: HomeVC())
         navController.navigationBar.backgroundColor = navControllerColor
@@ -28,20 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navController.navigationBar.shadowImage = UIImage()
         
         
-        let statusBarView: UIView = {
+        statusBarView = {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.backgroundColor = navControllerColor
             return view
         }()
         
-        if let homeView = navController.view {
-            homeView.addSubview(statusBarView)
+        if let homeView = navController.view, let statusBarView_ = statusBarView {
+            homeView.addSubview(statusBarView_)
             
-            statusBarView.topAnchor.constraint(equalTo: homeView.topAnchor).isActive = true
-            statusBarView.leftAnchor.constraint(equalTo: homeView.leftAnchor).isActive = true
-            statusBarView.rightAnchor.constraint(equalTo: homeView.rightAnchor).isActive = true
-            statusBarView.bottomAnchor.constraint(equalTo: navController.navigationBar.topAnchor, constant: 0).isActive = true
+            statusBarView_.topAnchor.constraint(equalTo: homeView.topAnchor).isActive = true
+            statusBarView_.leftAnchor.constraint(equalTo: homeView.leftAnchor).isActive = true
+            statusBarView_.rightAnchor.constraint(equalTo: homeView.rightAnchor).isActive = true
+            statusBarView_.bottomAnchor.constraint(equalTo: navController.navigationBar.topAnchor, constant: 0).isActive = true
         }
         
         window?.rootViewController = navController

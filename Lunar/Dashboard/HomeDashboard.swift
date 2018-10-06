@@ -26,9 +26,10 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     let portfolio_graph_height: CGFloat = 0.246
     let stock_cell_height: CGFloat = 75
     let header_cell_height: CGFloat = 100
+    var is_scrolled_beyond_graph: Bool = false
     
     var coins: [Crypto]? {
-        didSet{
+        didSet {
             self.reloadData()
             
             for coin in self.coins! {
@@ -44,13 +45,17 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         }
     }
     
+    var watchlist_coins: [Crypto]? {
+        didSet { self.reloadData() }
+    }
+    
     weak var homeVC: HomeVC?
     var background_bottom_anchor: NSLayoutConstraint?
     
     // Drape a background to give continuity between dashboard and navigation bar
     func add_background() {
         let back_view = UIView()
-        back_view.backgroundColor = Theme_color2
+        back_view.backgroundColor = Colors.Theme_color2
         back_view.translatesAutoresizingMaskIntoConstraints = false
         self.homeVC?.view.insertSubview(back_view, belowSubview: self)
         
@@ -61,14 +66,6 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         back_view.trailingAnchor.constraint(equalTo: home_VC.view.trailingAnchor).isActive = true
         background_bottom_anchor = back_view.bottomAnchor.constraint(equalTo: home_VC.home_dashboard.topAnchor)
         background_bottom_anchor?.isActive = true
-    }
-    
-    // Use didScroll to manage background drape of portfolio graph
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = -scrollView.contentOffset.y + 87
-        if offset > 0 {
-            background_bottom_anchor?.constant = offset
-        }
     }
     
     func registerCells() {
@@ -113,6 +110,7 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DefaultCell", for: indexPath)
             let watchlistView = WatchlistView()
+            watchlistView.watchlist_coins = self.watchlist_coins
             cell.addSubview(watchlistView)
             watchlistView.translatesAutoresizingMaskIntoConstraints = false
             watchlistView.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true

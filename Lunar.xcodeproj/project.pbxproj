@@ -31,6 +31,7 @@
 		70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */; };
 		70B78DF52147C64400ED0838 /* spyagency.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70B78DF42147C64400ED0838 /* spyagency.ttf */; };
 		70B78DF72147C67100ED0838 /* ShareTech.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70B78DF62147C67100ED0838 /* ShareTech.ttf */; };
+		70C24D59215A465700415F6C /* HomeDashScrollProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C24D58215A465700415F6C /* HomeDashScrollProperties.swift */; };
 		70CB1D0F20FC19D80002657B /* Simple_Tech.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70CB1D0E20FC19D80002657B /* Simple_Tech.otf */; };
 		70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB1D1020FC1AD70002657B /* General_Properties.swift */; };
 		70CF13B22106C760007453DB /* futureforcescondital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70CF13B12106C760007453DB /* futureforcescondital.ttf */; };
@@ -69,6 +70,7 @@
 		70B6020B20F2787100E255E8 /* WS_CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WS_CoinMarketCap.swift; sourceTree = "<group>"; };
 		70B78DF42147C64400ED0838 /* spyagency.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spyagency.ttf; sourceTree = "<group>"; };
 		70B78DF62147C67100ED0838 /* ShareTech.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShareTech.ttf; sourceTree = "<group>"; };
+		70C24D58215A465700415F6C /* HomeDashScrollProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashScrollProperties.swift; sourceTree = "<group>"; };
 		70CB1D0E20FC19D80002657B /* Simple_Tech.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple_Tech.otf; sourceTree = "<group>"; };
 		70CB1D1020FC1AD70002657B /* General_Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General_Properties.swift; sourceTree = "<group>"; };
 		70CF13B12106C760007453DB /* futureforcescondital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futureforcescondital.ttf; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */,
+				70C24D58215A465700415F6C /* HomeDashScrollProperties.swift */,
 				7013A40D21571C8A003C5BAC /* DashboardBaseCell.swift */,
 				70CB1D0D20FC06910002657B /* Portfolio */,
 				7013A408215672B6003C5BAC /* Headers */,
@@ -335,6 +338,7 @@
 				70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */,
 				705C5E4E20F6F46400FEF60B /* DashboardStockCell.swift in Sources */,
 				70A0E785214D3BB400BE34E7 /* Crypto.swift in Sources */,
+				70C24D59215A465700415F6C /* HomeDashScrollProperties.swift in Sources */,
 				70B6020C20F2787100E255E8 /* WS_CoinMarketCap.swift in Sources */,
 				70F696082150F38B00672962 /* Watchlist_Button.swift in Sources */,
 			);

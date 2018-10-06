@@ -20,12 +20,17 @@ class Fonts {
 }
 
 
-let Theme_color1: UIColor = UIColor(red: 45/255, green: 41/255, blue: 40/255, alpha: 1)  // dark
-let Theme_color2: UIColor = UIColor(red: 135/255, green: 197/255, blue: 194/255, alpha: 1)  // sky blue
-let Theme_color3: UIColor = UIColor(red: 223/255, green: 210/255, blue: 175/255, alpha: 1)  // khaki
-
-let Cell_color = UIColor.gray.withAlphaComponent(0.1)
-let Cell_highlight_color = UIColor.white.withAlphaComponent(0.3)
+class Colors {
+    static let Cell_color = UIColor.gray.withAlphaComponent(0.1)
+    static let Cell_highlight_color = UIColor.white.withAlphaComponent(0.1)
+    
+    static let Theme_color1: UIColor = UIColor(red: 45/255, green: 41/255, blue: 40/255, alpha: 1)  // dark
+    static let Theme_color2: UIColor = UIColor(red: 135/255, green: 197/255, blue: 194/255, alpha: 1)  // sky blue
+    static let Theme_color3: UIColor = UIColor(red: 223/255, green: 210/255, blue: 175/255, alpha: 1)  // khaki
+    
+    static let Tendies_color: UIColor = UIColor(red: 204/255, green: 255/255, blue: 102/255, alpha: 1)
+    static let No_Tendies_color: UIColor = UIColor(red: 245/255, green: 113/255, blue: 130/255, alpha: 1)
+}
 
 func currencyConverter(aDouble: Double...) -> String{
     

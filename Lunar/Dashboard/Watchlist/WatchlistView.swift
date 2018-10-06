@@ -18,7 +18,9 @@ class WatchlistView: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         setUp()
     }
     
-    var watchlist_coins: [Crypto]?
+    var watchlist_coins: [Crypto]? {
+        didSet { self.reloadData() }
+    }
     
     func setUp() {
         self.dataSource = self
@@ -43,7 +45,7 @@ class WatchlistView: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return watchlist_coins?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +57,7 @@ class WatchlistView: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: 125, height: collectionView.frame.height)
+        let size = CGSize(width: 150, height: collectionView.frame.height)
         return size
     }
     

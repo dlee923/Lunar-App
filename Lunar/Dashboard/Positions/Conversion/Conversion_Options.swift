@@ -19,11 +19,12 @@ class Conversion_Options: UITableView, UITableViewDelegate, UITableViewDataSourc
     }
     
     fileprivate func set_up() {
-        self.backgroundColor = Theme_color3
+        self.backgroundColor = Colors.Theme_color3
         self.isScrollEnabled = false
         for option in Convert_Currencies.all_values {
             self.options.append(option.rawValue)
         }
+        self.layer.cornerRadius = 5
     }
     
     static let height: CGFloat = 150
@@ -44,7 +45,7 @@ class Conversion_Options: UITableView, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "option")
-        cell.backgroundColor = Theme_color3
+        cell.backgroundColor = Colors.Theme_color3
         cell.textLabel?.text = options[indexPath.row]
         cell.textLabel?.textAlignment = .center
         cell.textLabel?.font = Fonts.font_space_ranger3?.withSize(15)

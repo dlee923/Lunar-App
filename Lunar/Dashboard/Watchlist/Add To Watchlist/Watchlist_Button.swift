@@ -16,7 +16,7 @@ class Watchlist_Button: Header_Button {
     }
     
     fileprivate func set_up() {
-        self.layer.borderColor = Theme_color3.cgColor
+        self.layer.borderColor = Colors.Theme_color3.cgColor
         self.layer.borderWidth = 1
         self.addTarget(self, action: #selector(add_coin_to_watch), for: .touchUpInside)
     }

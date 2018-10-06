@@ -22,7 +22,7 @@ class Graph: UIView {
     // graph properties
     var animate: Bool!
     
-    let lineColor: UIColor = Theme_color3
+    let lineColor: UIColor = Colors.Theme_color3
     let duration: Double = 2.0
 
     // axis dimensions
@@ -99,7 +99,7 @@ class Graph: UIView {
         shape_layer.strokeColor = filled ? UIColor.clear.cgColor : lineColor.cgColor
         shape_layer.lineWidth = lineWidth
         shape_layer.strokeEnd = 1
-        shape_layer.fillColor = filled ? Theme_color1.cgColor : UIColor.clear.cgColor
+        shape_layer.fillColor = filled ? Colors.Theme_color1.cgColor : UIColor.clear.cgColor
         shape_layer.position = CGPoint(x: 0, y: 0)
         
         return shape_layer

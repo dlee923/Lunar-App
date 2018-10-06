@@ -10,6 +10,18 @@ import UIKit
 
 extension HomeVC {
     
+    // MARK: Navigation Bar Color Scheme
+    func change_navigation_color(is_active: Bool) {
+        if is_active {
+            // do nothing
+            return
+        } else {
+            self.title_label.textColor = self.title_label.textColor == Colors.Theme_color1 ? Colors.Theme_color2 : Colors.Theme_color1
+            self.navigationController?.navigationBar.backgroundColor = self.navigationController?.navigationBar.backgroundColor == Colors.Theme_color2 ? Colors.Theme_color1 : Colors.Theme_color2
+            statusBarView?.backgroundColor = statusBarView?.backgroundColor == Colors.Theme_color2 ? Colors.Theme_color1 : Colors.Theme_color2
+        }
+    }
+    
     // MARK: Home View Functions
     func set_up_home_dashboard() {
         home_dashboard = HomeDashboard()
@@ -34,7 +46,7 @@ extension HomeVC {
         
         menu_button_view.imageView?.contentMode = .scaleAspectFit
         menu_button_view.setImage(button_image.withRenderingMode(.alwaysTemplate), for: .normal)
-        menu_button_view.tintColor = menu_button_view.isSelected ? Theme_color3 : Theme_color1
+        menu_button_view.tintColor = Colors.Theme_color3
         
         menu_button_view.addTarget(self, action: #selector(display_settings), for: .touchUpInside)
         
@@ -96,7 +108,7 @@ extension HomeVC {
     func set_up_profile(button_size: CGFloat, button_image: UIImage?) -> UIBarButtonItem {
         let menu_button_view = UIButton(type: .custom)
         menu_button_view.backgroundColor = .clear
-        menu_button_view.layer.borderColor = Theme_color1.cgColor
+        menu_button_view.layer.borderColor = Colors.Theme_color3.cgColor
         menu_button_view.layer.borderWidth = 1
         menu_button_view.frame = CGRect(x: 0, y: 0, width: button_size, height: button_size)
         menu_button_view.translatesAutoresizingMaskIntoConstraints = false
@@ -106,7 +118,7 @@ extension HomeVC {
         
         menu_button_view.imageView?.contentMode = .scaleAspectFit
         menu_button_view.setImage(button_image?.withRenderingMode(.alwaysTemplate), for: .normal)
-        menu_button_view.tintColor = menu_button_view.isSelected ? Theme_color3 : Theme_color1
+        menu_button_view.tintColor = menu_button_view.isSelected ? Colors.Theme_color3 : Colors.Theme_color1
         
         let menu_button = UIBarButtonItem(customView: menu_button_view)
         

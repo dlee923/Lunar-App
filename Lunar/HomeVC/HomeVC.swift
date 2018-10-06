@@ -12,8 +12,8 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = Theme_color1
+
+        self.view.backgroundColor = Colors.Theme_color1
         // Do any additional setup after loading the view, typically from a nib.
         
         /*
@@ -34,8 +34,10 @@ class HomeVC: UIViewController {
         
         self.navigationItem.titleView = title_label
         
-        self.navigationItem.leftBarButtonItem = set_up_navigation(button_size: 30, button_image: #imageLiteral(resourceName: "menu2_150"))
-        self.navigationItem.rightBarButtonItem = set_up_profile(button_size: 30, button_image: nil)
+        settings_button = set_up_navigation(button_size: 30, button_image: #imageLiteral(resourceName: "menu2_150"))
+        profile_button = set_up_profile(button_size: 30, button_image: nil)
+        self.navigationItem.leftBarButtonItem = settings_button
+        self.navigationItem.rightBarButtonItem = profile_button
     }
     
     let app_title = "Lunar"
@@ -47,6 +49,13 @@ class HomeVC: UIViewController {
             home_dashboard.coins = self.coins
         }
     }
+    
+    var watchlist_coins: [Crypto]? {
+        didSet {
+            home_dashboard.watchlist_coins = self.watchlist_coins
+        }
+    }
+    
     var is_menu_displayed: Bool = false
     var settings_view_center: NSLayoutConstraint?
     weak var home_dashboard: HomeDashboard!
@@ -56,9 +65,12 @@ class HomeVC: UIViewController {
         title_label.text = self.app_title
         title_label.textAlignment = .center
         title_label.font = Fonts.font_space_ranger2?.withSize(20)
-        title_label.textColor = Theme_color1
+        title_label.textColor = Colors.Theme_color1
         return title_label
     }()
+    
+    var settings_button: UIBarButtonItem?
+    var profile_button: UIBarButtonItem?
     
     var settings_view: SettingsView?
     
@@ -207,6 +219,7 @@ class HomeVC: UIViewController {
         }
         
         self.coins = coin_list
+        self.watchlist_coins = coin_list
     }
     
     override func didReceiveMemoryWarning() {

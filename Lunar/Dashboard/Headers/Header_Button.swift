@@ -18,30 +18,36 @@ class Header_Button: UIButton {
     fileprivate func set_up(title: String) {
         self.setTitle(title, for: UIControlState.normal)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = Cell_color
+        self.backgroundColor = Colors.Cell_color
         self.layer.cornerRadius = 5
         self.titleLabel?.font = Fonts.font_space_ranger3?.withSize(15)
-        self.setTitleColor(Theme_color3, for: .normal)
+        self.setTitleColor(Colors.Theme_color3, for: .normal)
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.backgroundColor = Cell_highlight_color
+        self.backgroundColor = Colors.Cell_highlight_color
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        self.backgroundColor = Cell_color
+        self.backgroundColor = Colors.Cell_color
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        self.backgroundColor = Cell_color
+        self.backgroundColor = Colors.Cell_color
     }
     
-    func add_cancel_background() {
+    static func add_cancel_background(views: [UIView]) {
         let view = UIView()
+        view.backgroundColor = .red
+        
+        UIApplication.shared.keyWindow?.addSubview(view)
+    }
+    
+    fileprivate func remove_cancel_background() {
         
     }
     
