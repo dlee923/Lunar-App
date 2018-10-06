@@ -11,23 +11,23 @@ import UIKit
 class DashboardBaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = 15
-        self.backgroundColor = Colors.Cell_color
+        self.layer.cornerRadius = CornerRadius.Dashboard_Cells.rawValue
+        self.backgroundColor = UIColor.Cell_color
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.backgroundColor = Colors.Cell_highlight_color
+        self.backgroundColor = UIColor.Cell_highlight_color
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        self.backgroundColor = Colors.Cell_color
+        self.backgroundColor = UIColor.Cell_color
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        self.backgroundColor = Colors.Cell_color
+        self.backgroundColor = UIColor.Cell_color
     }
     
     required init?(coder aDecoder: NSCoder) {

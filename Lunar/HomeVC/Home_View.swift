@@ -16,9 +16,9 @@ extension HomeVC {
             // do nothing
             return
         } else {
-            self.title_label.textColor = self.title_label.textColor == Colors.Theme_color1 ? Colors.Theme_color2 : Colors.Theme_color1
-            self.navigationController?.navigationBar.backgroundColor = self.navigationController?.navigationBar.backgroundColor == Colors.Theme_color2 ? Colors.Theme_color1 : Colors.Theme_color2
-            statusBarView?.backgroundColor = statusBarView?.backgroundColor == Colors.Theme_color2 ? Colors.Theme_color1 : Colors.Theme_color2
+            self.title_label.textColor = self.title_label.textColor == UIColor.Theme_color1 ? UIColor.Theme_color2 : UIColor.Theme_color1
+            self.navigationController?.navigationBar.backgroundColor = self.navigationController?.navigationBar.backgroundColor == UIColor.Theme_color2 ? UIColor.Theme_color1 : UIColor.Theme_color2
+            statusBarView?.backgroundColor = statusBarView?.backgroundColor == UIColor.Theme_color2 ? UIColor.Theme_color1 : UIColor.Theme_color2
         }
     }
     
@@ -46,7 +46,7 @@ extension HomeVC {
         
         menu_button_view.imageView?.contentMode = .scaleAspectFit
         menu_button_view.setImage(button_image.withRenderingMode(.alwaysTemplate), for: .normal)
-        menu_button_view.tintColor = Colors.Theme_color3
+        menu_button_view.tintColor = UIColor.Theme_color3
         
         menu_button_view.addTarget(self, action: #selector(display_settings), for: .touchUpInside)
         
@@ -81,7 +81,7 @@ extension HomeVC {
         
         UIView.animate(withDuration: 0.25, animations: {
             self.view.window?.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-            self.view.window?.layer.cornerRadius = 20
+            self.view.window?.layer.cornerRadius = CornerRadius.Settings.rawValue
             self.view.window?.clipsToBounds = true
             
             self.settings_view_center?.constant = 0
@@ -108,7 +108,7 @@ extension HomeVC {
     func set_up_profile(button_size: CGFloat, button_image: UIImage?) -> UIBarButtonItem {
         let menu_button_view = UIButton(type: .custom)
         menu_button_view.backgroundColor = .clear
-        menu_button_view.layer.borderColor = Colors.Theme_color3.cgColor
+        menu_button_view.layer.borderColor = UIColor.Theme_color3.cgColor
         menu_button_view.layer.borderWidth = 1
         menu_button_view.frame = CGRect(x: 0, y: 0, width: button_size, height: button_size)
         menu_button_view.translatesAutoresizingMaskIntoConstraints = false
@@ -118,7 +118,7 @@ extension HomeVC {
         
         menu_button_view.imageView?.contentMode = .scaleAspectFit
         menu_button_view.setImage(button_image?.withRenderingMode(.alwaysTemplate), for: .normal)
-        menu_button_view.tintColor = menu_button_view.isSelected ? Colors.Theme_color3 : Colors.Theme_color1
+        menu_button_view.tintColor = menu_button_view.isSelected ? UIColor.Theme_color3 : UIColor.Theme_color1
         
         let menu_button = UIBarButtonItem(customView: menu_button_view)
         

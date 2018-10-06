@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        let navControllerColor: UIColor = Colors.Theme_color2
+        let navControllerColor: UIColor = UIColor.Theme_color2
         
         let navController = UINavigationController(rootViewController: HomeVC())
         navController.navigationBar.backgroundColor = navControllerColor

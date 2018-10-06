@@ -13,7 +13,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = Colors.Theme_color1
+        self.view.backgroundColor = UIColor.Theme_color1
         // Do any additional setup after loading the view, typically from a nib.
         
         /*
@@ -58,14 +58,14 @@ class HomeVC: UIViewController {
     
     var is_menu_displayed: Bool = false
     var settings_view_center: NSLayoutConstraint?
-    weak var home_dashboard: HomeDashboard!
+    var home_dashboard: HomeDashboard!
     
     lazy var title_label: UILabel = {
         let title_label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
         title_label.text = self.app_title
         title_label.textAlignment = .center
-        title_label.font = Fonts.font_space_ranger2?.withSize(20)
-        title_label.textColor = Colors.Theme_color1
+        title_label.font = UIFont.font_space_ranger2?.withSize(20)
+        title_label.textColor = UIColor.Theme_color1
         return title_label
     }()
     

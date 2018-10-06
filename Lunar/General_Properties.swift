@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Fonts {
+extension UIFont {
     static let font_simple_tech = UIFont(name: "Simple Tech Bold 02", size: 5)
     static let font_future_forces = UIFont(name: "Future Forces Condensed Italic", size: 5)
     static let font_good_times = UIFont(name: "Good Times", size: 5)
@@ -20,7 +20,7 @@ class Fonts {
 }
 
 
-class Colors {
+extension UIColor {
     static let Cell_color = UIColor.gray.withAlphaComponent(0.1)
     static let Cell_highlight_color = UIColor.white.withAlphaComponent(0.1)
     
@@ -47,4 +47,10 @@ func currencyConverter(aDouble: Double...) -> String{
     
     let newValue = formatter.string(for: aDoubleTTL)
     return newValue!
+}
+
+enum CornerRadius: CGFloat {
+    case CoinCard = 30
+    case Settings = 20
+    case Dashboard_Cells = 15
 }

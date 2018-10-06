@@ -16,7 +16,7 @@ class Title_Label: UILabel {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textAlignment = .center
         self.textColor = .white
-        self.font = Fonts.font_spy_agency?.withSize(12)
+        self.font = UIFont.font_spy_agency?.withSize(12)
         self.textColor = .white
 //        self.sizeToFit()
     }
@@ -47,7 +47,7 @@ class WatchlistCell: DashboardBaseCell {
     let font_size_name: CGFloat = 12
     
     let performance_arrows_width: CGFloat = 0.075
-    let performance_arrows_color = Colors.Cell_color
+    let performance_arrows_color = UIColor.Cell_color
     
     let side_insets: CGFloat = 5
     let roof_insets: CGFloat = 5
@@ -95,7 +95,7 @@ class WatchlistCell: DashboardBaseCell {
     fileprivate func add_coin_name() {
         container_view.addSubview(symbol_lbl)
         symbol_lbl.textAlignment = .center
-        symbol_lbl.style_stock_symbol_label(font_size: font_size_symbol, font_color: Colors.Theme_color2, autolayout: true)
+        symbol_lbl.style_stock_symbol_label(font_size: font_size_symbol, font_color: UIColor.Theme_color2, autolayout: true)
         
         symbol_lbl.leadingAnchor.constraint(equalTo: container_view.leadingAnchor).isActive = true
         symbol_lbl.topAnchor.constraint(equalTo: container_view.topAnchor).isActive = true
@@ -106,7 +106,7 @@ class WatchlistCell: DashboardBaseCell {
     fileprivate func add_coin_prices() {
         container_view.addSubview(usd_price_lbl)
         usd_price_lbl.textAlignment = .center
-        usd_price_lbl.style_stock_usd_price_label(font_size: font_size_price, font_color: Colors.Theme_color3, autolayout: true)
+        usd_price_lbl.style_stock_usd_price_label(font_size: font_size_price, font_color: UIColor.Theme_color3, autolayout: true)
         
         usd_price_lbl.leadingAnchor.constraint(equalTo: container_view.leadingAnchor).isActive = true
         usd_price_lbl.bottomAnchor.constraint(equalTo: h24_title.topAnchor).isActive = true
@@ -242,13 +242,13 @@ class WatchlistCell: DashboardBaseCell {
         h24_lbl.text = "\(self.crypto?.usd_data.pct_24h ?? 0)"
         d7_lbl.text = "\(self.crypto?.usd_data.pct_1week ?? 0)"
         
-        h1_up.tintColor = self.crypto?.usd_data.pct_1h ?? 0.0 > 0.0 ? Colors.Tendies_color : performance_arrows_color
-        h24_up.tintColor = self.crypto?.usd_data.pct_24h ?? 0.0 > 0.0 ? Colors.Tendies_color : performance_arrows_color
-        d7_up.tintColor = self.crypto?.usd_data.pct_1week ?? 0.0 > 0.0 ? Colors.Tendies_color : performance_arrows_color
+        h1_up.tintColor = self.crypto?.usd_data.pct_1h ?? 0.0 > 0.0 ? UIColor.Tendies_color : performance_arrows_color
+        h24_up.tintColor = self.crypto?.usd_data.pct_24h ?? 0.0 > 0.0 ? UIColor.Tendies_color : performance_arrows_color
+        d7_up.tintColor = self.crypto?.usd_data.pct_1week ?? 0.0 > 0.0 ? UIColor.Tendies_color : performance_arrows_color
         
-        h1_down.tintColor = self.crypto?.usd_data.pct_1h ?? 0.0 < 0.0 ? Colors.No_Tendies_color : performance_arrows_color
-        h24_down.tintColor = self.crypto?.usd_data.pct_24h ?? 0.0 < 0.0 ? Colors.No_Tendies_color : performance_arrows_color
-        d7_down.tintColor = self.crypto?.usd_data.pct_1week ?? 0.0 < 0.0 ? Colors.No_Tendies_color : performance_arrows_color
+        h1_down.tintColor = self.crypto?.usd_data.pct_1h ?? 0.0 < 0.0 ? UIColor.No_Tendies_color : performance_arrows_color
+        h24_down.tintColor = self.crypto?.usd_data.pct_24h ?? 0.0 < 0.0 ? UIColor.No_Tendies_color : performance_arrows_color
+        d7_down.tintColor = self.crypto?.usd_data.pct_1week ?? 0.0 < 0.0 ? UIColor.No_Tendies_color : performance_arrows_color
     }
     
     required init?(coder aDecoder: NSCoder) {

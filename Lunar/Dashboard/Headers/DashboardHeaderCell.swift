@@ -12,13 +12,13 @@ class DashboardHeaderCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = Colors.Theme_color1
+        self.backgroundColor = UIColor.Theme_color1
     }
     
     let header_label: UILabel = {
         let header_label = UILabel()
-        header_label.font = Fonts.font_share_tech?.withSize(18)
-        header_label.textColor = Colors.Theme_color3
+        header_label.font = UIFont.font_share_tech?.withSize(18)
+        header_label.textColor = UIColor.Theme_color3
         header_label.translatesAutoresizingMaskIntoConstraints = false
         return header_label
     }()

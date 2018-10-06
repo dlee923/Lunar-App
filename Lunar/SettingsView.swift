@@ -13,7 +13,7 @@ class SettingsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = Colors.Theme_color3
+        self.backgroundColor = UIColor.Theme_color3
         self.layer.cornerRadius = 20
     }
     

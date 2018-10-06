@@ -14,6 +14,8 @@
 		7013A41121571D24003C5BAC /* WatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013A41021571D24003C5BAC /* WatchlistCell.swift */; };
 		705C5E4C20F6F05400FEF60B /* HomeDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */; };
 		705C5E4E20F6F46400FEF60B /* DashboardStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C5E4D20F6F46400FEF60B /* DashboardStockCell.swift */; };
+		705C914F2169150D0061CEF4 /* CoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C914E2169150D0061CEF4 /* CoinVC.swift */; };
+		705C9151216926240061CEF4 /* RedditFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C9150216926240061CEF4 /* RedditFeed.swift */; };
 		70A0AEF52128CF8D007D7FDC /* good_times.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEF42128CF8C007D7FDC /* good_times.ttf */; };
 		70A0AEF72128D04C007D7FDC /* spaceranger1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */; };
 		70A0AEFC2128D2C5007D7FDC /* spaceranger2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */; };
@@ -51,6 +53,8 @@
 		7013A41021571D24003C5BAC /* WatchlistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCell.swift; sourceTree = "<group>"; };
 		705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboard.swift; sourceTree = "<group>"; };
 		705C5E4D20F6F46400FEF60B /* DashboardStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStockCell.swift; sourceTree = "<group>"; };
+		705C914E2169150D0061CEF4 /* CoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinVC.swift; sourceTree = "<group>"; };
+		705C9150216926240061CEF4 /* RedditFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditFeed.swift; sourceTree = "<group>"; };
 		70A0AEF42128CF8C007D7FDC /* good_times.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = good_times.ttf; sourceTree = "<group>"; };
 		70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger1.ttf; sourceTree = "<group>"; };
 		70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger2.ttf; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			path = "Add To Watchlist";
 			sourceTree = "<group>";
 		};
+		705C914D216914DD0061CEF4 /* CoinVC */ = {
+			isa = PBXGroup;
+			children = (
+				705C914E2169150D0061CEF4 /* CoinVC.swift */,
+				705C9150216926240061CEF4 /* RedditFeed.swift */,
+			);
+			path = CoinVC;
+			sourceTree = "<group>";
+		};
 		709B2A732151E7D7001BC65A /* Conversion */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +205,7 @@
 				7006C9B2210CFDC100178223 /* WebServices */,
 				7006C9B3210CFDD300178223 /* HomeVC */,
 				70CB1D0C20FC067D0002657B /* Dashboard */,
+				705C914D216914DD0061CEF4 /* CoinVC */,
 				70F6AD0320F2FEE200BEB7D7 /* SettingsView.swift */,
 				70B601FA20F2724200E255E8 /* Main.storyboard */,
 				70B6020020F2724300E255E8 /* Assets.xcassets */,
@@ -321,12 +335,14 @@
 				7013A40C215674AD003C5BAC /* WatchlistView.swift in Sources */,
 				70F6AD0420F2FEE200BEB7D7 /* SettingsView.swift in Sources */,
 				70D68AF0213D75C5004A5625 /* Home_View.swift in Sources */,
+				705C9151216926240061CEF4 /* RedditFeed.swift in Sources */,
 				70B601F920F2724200E255E8 /* HomeVC.swift in Sources */,
 				70B601F720F2724200E255E8 /* AppDelegate.swift in Sources */,
 				70D68AF2213D8F27004A5625 /* DashboardHeaderCell.swift in Sources */,
 				70A0E787214D415500BE34E7 /* Time_Picker.swift in Sources */,
 				7006C9B1210C14DD00178223 /* WS_CryptoCompare.swift in Sources */,
 				70F696062150F23100672962 /* Conversion_Button.swift in Sources */,
+				705C914F2169150D0061CEF4 /* CoinVC.swift in Sources */,
 				7013A41121571D24003C5BAC /* WatchlistCell.swift in Sources */,
 				7006C9B5210CFE1F00178223 /* Graph.swift in Sources */,
 				70A0E789214DCAE700BE34E7 /* Header_Button.swift in Sources */,

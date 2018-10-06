@@ -55,7 +55,7 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
     // Drape a background to give continuity between dashboard and navigation bar
     func add_background() {
         let back_view = UIView()
-        back_view.backgroundColor = Colors.Theme_color2
+        back_view.backgroundColor = UIColor.Theme_color2
         back_view.translatesAutoresizingMaskIntoConstraints = false
         self.homeVC?.view.insertSubview(back_view, belowSubview: self)
         
@@ -127,6 +127,14 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let coin_vc = CoinVC()
+        coin_vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        homeVC?.present(coin_vc, animated: true) {
+            // pass coin info to coin_vc
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

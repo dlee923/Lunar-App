@@ -12,26 +12,26 @@ extension UILabel {
     
     func style_stock_symbol_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
-        self.font = Fonts.font_space_ranger3?.withSize(font_size)
+        self.font = UIFont.font_space_ranger3?.withSize(font_size)
         self.textColor = font_color
     }
     
     func style_stock_name_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
-        self.font = Fonts.font_share_tech?.withSize(font_size)
+        self.font = UIFont.font_share_tech?.withSize(font_size)
         self.textColor = font_color
     }
     
     func style_stock_price_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
         self.textColor = font_color
-        self.font = Fonts.font_share_tech?.withSize(font_size)
+        self.font = UIFont.font_share_tech?.withSize(font_size)
     }
     
     func style_stock_usd_price_label(font_size: CGFloat, font_color: UIColor, autolayout: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = autolayout ? false : true
         self.textColor = font_color
-        self.font = Fonts.font_spy_agency?.withSize(font_size)
+        self.font = UIFont.font_spy_agency?.withSize(font_size)
     }
 }
 
@@ -98,7 +98,7 @@ class DashboardStockCell: DashboardBaseCell {
     }
     
     fileprivate func add_price_info_constraint() {
-        usd_price_lbl.style_stock_usd_price_label(font_size: font_size_price_usd, font_color: Colors.Theme_color3, autolayout: true)
+        usd_price_lbl.style_stock_usd_price_label(font_size: font_size_price_usd, font_color: UIColor.Theme_color3, autolayout: true)
         usd_price_lbl.backgroundColor = layout_helper ? .red : .clear
         
         price_lbl.style_stock_price_label(font_size: font_size_price, font_color: .white, autolayout: true)
@@ -124,7 +124,7 @@ class DashboardStockCell: DashboardBaseCell {
     }
     
     fileprivate func add_coin_info_constraint() {
-        symbol_lbl.style_stock_symbol_label(font_size: self.font_size_symbol, font_color: Colors.Theme_color2, autolayout: true)
+        symbol_lbl.style_stock_symbol_label(font_size: self.font_size_symbol, font_color: UIColor.Theme_color2, autolayout: true)
         symbol_lbl.backgroundColor = layout_helper ? .blue : .clear
         
         name_lbl.style_stock_name_label(font_size: self.font_size_name, font_color: .white, autolayout: true)
