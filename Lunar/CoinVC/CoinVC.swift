@@ -18,20 +18,23 @@ class CoinVC: UIViewController {
     }
     
     let blur_view = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    var cardView: CardView? = CardView()
     
     fileprivate func set_up() {
         self.view.backgroundColor = .clear
         
-        let view = UIView()
-        self.view.addSubview(view)
-        view.layer.cornerRadius = CornerRadius.CoinCard.rawValue
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.Theme_color1
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 75).isActive = true
-        view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        guard let cardVw = cardView else { return }
+        
+        self.view.addSubview(cardVw)
+        cardVw.dismissViewController = dismiss_self
+        cardVw.layer.cornerRadius = CornerRadius.CoinCard.rawValue
+        cardVw.translatesAutoresizingMaskIntoConstraints = false
+        cardVw.backgroundColor = UIColor.Theme_color1
+        cardVw.translatesAutoresizingMaskIntoConstraints = false
+        cardVw.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 75).isActive = true
+        cardVw.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+        cardVw.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        cardVw.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismiss_self)))
     }
@@ -60,8 +63,9 @@ class CoinVC: UIViewController {
     }
     
     @objc fileprivate func dismiss_self() {
-        self.dismiss(animated: true) {
-            // do something here when dismissing
+        self.cardView?.dismissViewController = nil
+        self.dismiss(animated: false) {
+            
         }
     }
     

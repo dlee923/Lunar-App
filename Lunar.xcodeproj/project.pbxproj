@@ -16,6 +16,8 @@
 		705C5E4E20F6F46400FEF60B /* DashboardStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C5E4D20F6F46400FEF60B /* DashboardStockCell.swift */; };
 		705C914F2169150D0061CEF4 /* CoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C914E2169150D0061CEF4 /* CoinVC.swift */; };
 		705C9151216926240061CEF4 /* RedditFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C9150216926240061CEF4 /* RedditFeed.swift */; };
+		705C915B2173775C0061CEF4 /* HomeDashboardSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C915A2173775C0061CEF4 /* HomeDashboardSelect.swift */; };
+		705C915D2173832F0061CEF4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C915C2173832F0061CEF4 /* CardView.swift */; };
 		70A0AEF52128CF8D007D7FDC /* good_times.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEF42128CF8C007D7FDC /* good_times.ttf */; };
 		70A0AEF72128D04C007D7FDC /* spaceranger1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */; };
 		70A0AEFC2128D2C5007D7FDC /* spaceranger2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */; };
@@ -55,6 +57,8 @@
 		705C5E4D20F6F46400FEF60B /* DashboardStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStockCell.swift; sourceTree = "<group>"; };
 		705C914E2169150D0061CEF4 /* CoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinVC.swift; sourceTree = "<group>"; };
 		705C9150216926240061CEF4 /* RedditFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditFeed.swift; sourceTree = "<group>"; };
+		705C915A2173775C0061CEF4 /* HomeDashboardSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboardSelect.swift; sourceTree = "<group>"; };
+		705C915C2173832F0061CEF4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		70A0AEF42128CF8C007D7FDC /* good_times.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = good_times.ttf; sourceTree = "<group>"; };
 		70A0AEF62128D04C007D7FDC /* spaceranger1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger1.ttf; sourceTree = "<group>"; };
 		70A0AEFB2128D2C5007D7FDC /* spaceranger2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spaceranger2.ttf; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				705C914E2169150D0061CEF4 /* CoinVC.swift */,
+				705C915C2173832F0061CEF4 /* CardView.swift */,
 				705C9150216926240061CEF4 /* RedditFeed.swift */,
 			);
 			path = CoinVC;
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				705C5E4B20F6F05400FEF60B /* HomeDashboard.swift */,
+				705C915A2173775C0061CEF4 /* HomeDashboardSelect.swift */,
 				70C24D58215A465700415F6C /* HomeDashScrollProperties.swift */,
 				7013A40D21571C8A003C5BAC /* DashboardBaseCell.swift */,
 				70CB1D0D20FC06910002657B /* Portfolio */,
@@ -333,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7013A40C215674AD003C5BAC /* WatchlistView.swift in Sources */,
+				705C915D2173832F0061CEF4 /* CardView.swift in Sources */,
 				70F6AD0420F2FEE200BEB7D7 /* SettingsView.swift in Sources */,
 				70D68AF0213D75C5004A5625 /* Home_View.swift in Sources */,
 				705C9151216926240061CEF4 /* RedditFeed.swift in Sources */,
@@ -349,6 +356,7 @@
 				70A0AEFE212A3231007D7FDC /* DashboardPortfolioCell.swift in Sources */,
 				70A0E78B214DCDDD00BE34E7 /* Conversion_Options.swift in Sources */,
 				705C5E4C20F6F05400FEF60B /* HomeDashboard.swift in Sources */,
+				705C915B2173775C0061CEF4 /* HomeDashboardSelect.swift in Sources */,
 				70B601FF20F2724200E255E8 /* Lunar.xcdatamodeld in Sources */,
 				7013A40E21571C8A003C5BAC /* DashboardBaseCell.swift in Sources */,
 				70CB1D1120FC1AD70002657B /* General_Properties.swift in Sources */,

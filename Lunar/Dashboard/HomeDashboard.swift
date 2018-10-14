@@ -129,14 +129,6 @@ class HomeDashboard: UICollectionView, UICollectionViewDelegateFlowLayout, UICol
         return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let coin_vc = CoinVC()
-        coin_vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        homeVC?.present(coin_vc, animated: true) {
-            // pass coin info to coin_vc
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width: CGFloat?
         var height: CGFloat?
